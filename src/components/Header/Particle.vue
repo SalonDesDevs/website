@@ -1,16 +1,12 @@
 <template>
-    <div class="top-container">
-        <div id="top-container-particles"></div>
-        <navigation></navigation>
-    </div>
+    <div id="top-container-particles"></div>
 </template>
 
 <script>
-import Navigation from './Navigation.vue'
-import particleSettings from '../particle-settings.json'
+import particleSettings from '../../particle-settings.json'
 
 export default {
-    name: 'homepage-top',
+    name: 'particle',
     data () {
         return {}
     },
@@ -21,18 +17,10 @@ export default {
         initParticleJS() {
             particlesJS('top-container-particles', particleSettings);
         }
-    },
-    components: {
-        Navigation
-    }
-}
+    }}
 </script>
 
 <style>
-.top-container {
-    background-color: transparent;
-} 
-
 #top-container-particles {
     height: 100%;
     width: 100%;

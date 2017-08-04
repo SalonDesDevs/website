@@ -1,11 +1,11 @@
 <template>
     <div id="app">
-        <homepage-top></homepage-top>
+        <homepage></homepage>
     </div>
 </template>
 
 <script>
-import HomepageTop from './components/HomepageTop.vue'
+import Homepage from './components/Homepage.vue'
 
 export default {
     name: 'app',
@@ -13,7 +13,7 @@ export default {
         return {}
     },
     components: {
-        HomepageTop
+        Homepage
     }
 }
 </script>
