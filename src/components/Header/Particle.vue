@@ -22,7 +22,7 @@ export default {
 
 <style>
 #top-container-particles {
-    height: 100%;
+    height: 700px;
     width: 100%;
     z-index: -1;
     position: absolute;

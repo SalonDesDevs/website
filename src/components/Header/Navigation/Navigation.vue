@@ -2,10 +2,10 @@
     <div class="navigation-bar">
         <table>
             <tr>
-                <td class="left">
+                <td class="left half">
                     <navigation-left></navigation-left>
                 </td>
-                <td class="right">
+                <td class="right half">
                     <navigation-right></navigation-right>
                 </td>
             </tr>
@@ -42,12 +42,10 @@ table {
 }
 
 td.left {
-    width: 50%;
     overflow: hidden;
 }
 
 td.right {
-    width: 50%;
     overflow: hidden;
     text-align: right;
 }
