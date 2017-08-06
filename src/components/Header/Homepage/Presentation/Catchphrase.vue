@@ -21,14 +21,13 @@ export default {
 span {
     text-transform: uppercase;
     font-weight: 900;
-    font-size: 40px;
+    font-size: 37px;
     color: #eee;
 }
 span.blue {
     color: #396eb8;
 }
 h1 {
-    max-width: 550px;
     margin-top: 0;
 }
 </style>

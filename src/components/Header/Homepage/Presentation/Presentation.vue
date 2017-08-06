@@ -30,6 +30,7 @@ export default {
 <style scoped>
 div.presentation-left-container {
     height: 100%;
+    max-width: 550px;
 }
 
 p {
