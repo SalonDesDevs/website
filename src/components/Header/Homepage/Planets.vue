@@ -5,6 +5,7 @@
                 <feFlood flood-opacity="0.7" flood-color="#000" result="flood"/>
                 <feComposite in="SourceGraphic" in2="flood" operator="in" result="composite1"/>
                 <feGaussianBlur in="composite1" stdDeviation="3" result="blur"/>
+                <feOffset dx="0" dy="0" result="offset" />
                 <feComposite in="SourceGraphic" in2="offset" result="composite2"/>
             </filter>
         </defs>
@@ -18,7 +19,7 @@
 </template>
 
 <script>
-import planets from '../../planets.json'
+import planets from '../../../planets.json'
 export default {
     name: 'planets',
     data () {
@@ -44,12 +45,10 @@ export default {
     methods: {
         initMove() {
             if(this.moveInitialized) return;
-            console.log(this.$refs)
             this.moveInitialized = true;
             this.planets.forEach(planet => {
-                let moveX = this.speed * (Math.floor(Math.random() * 3) - 1);
-                let moveY = this.speed * (Math.floor(Math.random() * 3) - 1);
-                console.log({moveX, moveY})
+                let moveX = Math.random() * 2 * this.speed - this.speed;
+                let moveY = Math.random() * 2 * this.speed - this.speed;
                 setInterval(() => {
                     if(planet.cx + planet.r >= 486 || planet.cx - planet.r <= 0) moveX = -moveX;
                     if(planet.cy + planet.r >= 420 || planet.cy - planet.r <= 0) moveY = -moveY;

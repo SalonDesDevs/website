@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import HomepageHeader from './Header/Homepage.vue'
+import HomepageHeader from './Header/Homepage/Homepage.vue'
 
 export default {
     name: 'homepage',

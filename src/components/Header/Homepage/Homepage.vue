@@ -8,7 +8,7 @@
                     <planets></planets>
                 </td>
                 <td class="half">
-                    <planets></planets>
+                    <presentation></presentation>
                 </td>
             </tr>
         </table>
@@ -16,9 +16,10 @@
 </template>
 
 <script>
-import Navigation from './Navigation/Navigation.vue'
-import Particle from './Particle.vue'
+import Navigation from '../Navigation/Navigation.vue'
+import Particle from '../Particle.vue'
 import Planets from './Planets.vue'
+import Presentation from './Presentation.vue'
 
 export default {
     name: 'homepage-header',
@@ -28,7 +29,8 @@ export default {
     components: {
         Navigation,
         Particle,
-        Planets
+        Planets,
+        Presentation
     }
 }
 </script>
