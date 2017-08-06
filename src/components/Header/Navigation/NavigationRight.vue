@@ -55,6 +55,7 @@ button {
     color: #cacaca;
     font-weight: bold;
     font-size: 17px;
+    transition: background 100ms ease-in, color 100ms ease-in;
 }
 
 button:hover {

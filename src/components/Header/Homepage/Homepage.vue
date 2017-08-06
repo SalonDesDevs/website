@@ -40,6 +40,7 @@ export default {
 div.top-container {
     background-color: transparent;
     position: relative;
+    overflow: hidden;
 } 
 div.header-content {
     padding-top: 60px;
@@ -51,13 +52,28 @@ div.header-content {
     padding-bottom: 100px;
 }
 
+@media (max-width: 1140px) {
+    div.presentation-container {
+        padding-top: 60px;
+        min-width: 600px !important;
+    }
+    div.presentation-container > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    div.presentation-container > div > h1 {
+        text-align: center;
+    }
+
+}
+
 td.half {
     width: 50%;
 }
 
 div.planets-container {
-    padding-right: 50px;
-    flex: 1 0 calc(50% - 50px);
+    flex: 1 0 50%;
 }
 
 div.presentation-container {

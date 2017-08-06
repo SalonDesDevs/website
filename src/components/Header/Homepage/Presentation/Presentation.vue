@@ -30,7 +30,6 @@ export default {
 <style scoped>
 div.presentation-left-container {
     height: 100%;
-    max-width: 550px;
 }
 
 p {
@@ -48,6 +47,7 @@ button.join {
     padding: 10px 40px;
     border-radius: 4px;
     box-shadow: 0 4px 4px 0px #2a2a2a;
+    transition: box-shadow 200ms;
 }
 
 button.join:hover {

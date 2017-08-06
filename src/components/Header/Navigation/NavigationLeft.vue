@@ -29,6 +29,7 @@ export default {
 a, a:visited {
     color: #d1d1d1;
     text-decoration: none;
+    transition: text-shadow 100ms, color 100ms;
 }
 
 a:hover {

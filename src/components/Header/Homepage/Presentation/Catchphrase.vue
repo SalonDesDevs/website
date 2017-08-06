@@ -29,5 +29,6 @@ span.blue {
 }
 h1 {
     margin-top: 0;
+    max-width: 550px;
 }
 </style>
