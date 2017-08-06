@@ -1,5 +1,7 @@
 <template>
-    <homepage-header></homepage-header>
+    <div id="main-container">
+        <homepage-header></homepage-header>
+    </div>
 </template>
 
 <script>
@@ -15,3 +17,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+div#main-container {
+    overflow-x: hidden;
+}
+</style>

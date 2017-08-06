@@ -32,7 +32,7 @@
             "enable": true,
             "distance": 100,
             "color": "#ffffff",
-            "opacity": 0.3,
+            "opacity": 0.2,
             "width": 1
         },
         "move": {

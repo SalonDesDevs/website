@@ -62,6 +62,8 @@ button:hover {
     border-color: #ffffff;
     color: #2a2a2a;
     box-shadow: 0 0 2px 0px #fff;
+    cursor: pointer;
+    cursor: hand;
 }
 
 </style>

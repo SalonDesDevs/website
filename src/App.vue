@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,600,700,700i,900&subset=latin-ext');
 
 body, html {
     margin: 0;
@@ -28,6 +28,6 @@ body, html {
 }
 
 body {
-    background-color: #2a2a2a;
+    background-color: #fafafa;
 }
 </style>

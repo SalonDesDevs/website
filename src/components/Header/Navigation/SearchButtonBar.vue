@@ -26,5 +26,7 @@ svg {
 
 svg:hover {
     fill: #ffffff;
+    cursor: pointer;
+    cursor: hand;
 }
 </style>

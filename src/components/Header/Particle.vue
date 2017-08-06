@@ -22,11 +22,14 @@ export default {
 
 <style>
 #top-container-particles {
-    height: 700px;
+    height: calc(100% - 3px);
     width: 100%;
     z-index: -1;
     position: absolute;
-    background-color: #transparent;
+    background: #2a2a2a;
+    background: -moz-linear-gradient(top, #2a2a2a 30%, #2e353f 100%);
+    background: -webkit-linear-gradient(top, #2a2a2a 30%,#2e353f 100%);
+    background: linear-gradient(to bottom, #2a2a2a 30%,#2e353f 100%);
     color: #ffffff;
 }
 </style>
