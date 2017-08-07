@@ -1,5 +1,5 @@
 <template>
-    <div class="top-container">
+    <section class="top-container" id="header">
         <particle></particle>
         <navigation></navigation>
         <div class="header-content">
@@ -11,7 +11,7 @@
             </div>
         </div>
         <separator></separator>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style>
-div.top-container {
+section.top-container {
     background-color: transparent;
     position: relative;
     overflow: hidden;

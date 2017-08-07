@@ -20,9 +20,9 @@ div.container {
 }
 div.inner {
     position: absolute;
-    width: 120%;
+    width: 150%;
     height: 100%;
-    left: -10%;
+    left: -25%;
     background-color: #fafafa;
     border-top-left-radius: 50% 100px;
     border-top-right-radius: 50% 100px;

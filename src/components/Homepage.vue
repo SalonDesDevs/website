@@ -1,11 +1,13 @@
 <template>
-    <div id="main-container">
+    <div id="app">
         <homepage-header></homepage-header>
+        <last-articles></last-articles>
     </div>
 </template>
 
 <script>
 import HomepageHeader from './Header/Homepage/Homepage.vue'
+import LastArticles from './Articles/LastArticles.vue'
 
 export default {
     name: 'homepage',
@@ -13,13 +15,14 @@ export default {
         return {}
     },
     components: {
-        HomepageHeader
+        HomepageHeader,
+        LastArticles
     }
 }
 </script>
 
 <style scoped>
-div#main-container {
+div#app {
     overflow-x: hidden;
 }
 </style>
