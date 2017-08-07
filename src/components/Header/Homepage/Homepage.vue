@@ -65,7 +65,15 @@ div.header-content {
     div.presentation-container > div > h1 {
         text-align: center;
     }
+}
 
+@media (max-width: 600px) {
+    div.presentation-container {
+        min-width: auto !important;
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 
 td.half {
