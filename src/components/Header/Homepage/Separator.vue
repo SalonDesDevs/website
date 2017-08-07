@@ -1,5 +1,7 @@
 <template>
-    <div></div>
+    <div class="container">
+        <div class="inner"></div>
+    </div>
 </template>
 
 <script>
@@ -11,11 +13,18 @@ export default {
 </script>
 
 <style scoped>
-div {
-    width: 120%;
-    transform: translateX(-10%);
+div.container {
+    position: relative;
+    width: 100%;
     height: 100px;
+}
+div.inner {
+    position: absolute;
+    width: 120%;
+    height: 100%;
+    left: -10%;
     background-color: #fafafa;
-    border-radius: 50%/100px 100px 0 0;
+    border-top-left-radius: 50% 100px;
+    border-top-right-radius: 50% 100px;
 }
 </style>
