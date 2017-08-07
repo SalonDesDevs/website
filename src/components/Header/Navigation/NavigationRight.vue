@@ -1,10 +1,8 @@
 <template>
-    <ul>
+    <div>
         <search-button-bar></search-button-bar>
-        <li>
-            <a href="/login"><button>Connexion</button></a>
-        </li>
-    </ul>
+        <a href="/login"><button>Connexion</button></a>
+    </div>
 </template>
 
 <script>
@@ -23,7 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 
-li {
+a {
     display: inline-block;
 
     padding-left: 20px;
@@ -37,8 +35,8 @@ li {
     line-height: 60px;
 }
 
-ul {
-    margin: 0;
+div {
+    margin: 0 auto;
     padding: 0;
     padding-top: 5px;
     height: 60px;

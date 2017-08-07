@@ -21,7 +21,6 @@ export default {
 span {
     text-transform: uppercase;
     font-weight: 900;
-    font-size: 37px;
     color: #eee;
 }
 span.blue {
@@ -30,5 +29,17 @@ span.blue {
 h1 {
     margin-top: 0;
     max-width: 550px;
+    font-size: 37px;
+}
+@media (max-width: 600px) {
+    h1 {
+        font-size: 30px !important;
+    }
+}
+
+@media (max-width: 1140px) {
+    h1 {
+        text-align: center;
+    }
 }
 </style>

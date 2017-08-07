@@ -1,10 +1,8 @@
 <template>
-    <ul>
+    <div>
         <a href="/"><navigation-logo></navigation-logo></a>
-        <li v-for="name in names">
-            <a v-bind:href="values[name]">{{ name }}</a>
-        </li>
-    </ul>
+        <a v-bind:href="values[name]" v-for="name in names">{{ name }}</a>
+    </div>
 </template>
 
 <script>
@@ -37,7 +35,7 @@ a:hover {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
-li {
+a {
     display: inline-block;
 
     padding-left: 20px;
@@ -55,10 +53,11 @@ svg.navigation-logo {
     padding-right: 20px;
 }
 
-ul {
+div {
     margin: 0;
     padding: 0;
     padding-top: 5px;
     height: 60px;
+    width: auto;
 }
 </style>

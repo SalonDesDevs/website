@@ -1,21 +1,23 @@
 <template>
-    <svg ref="planets" viewBox="0 0 486 420" id="planets" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            <filter id="glow" width="5" height="5" x="-1" y="-1" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0.7" flood-color="#000" result="flood"/>
-                <feComposite in="SourceGraphic" in2="flood" operator="in" result="composite1"/>
-                <feGaussianBlur in="composite1" stdDeviation="3" result="blur"/>
-                <feOffset dx="0" dy="0" result="offset" />
-                <feComposite in="SourceGraphic" in2="offset" result="composite2"/>
-            </filter>
-        </defs>
-        <g fill="none" stroke="#555" stroke-width="2.5" stroke-linecap="round">
-            <path v-for="bond in bonds" :d="bondPath[bond.id].path" :opacity="bondPath[bond.id].opacity"/>
-        </g>
-        <g filter="url(#glow)" stroke-width=".5">
-            <circle v-for="planet in planets" v-bind="planet" :stroke="planet.fill"/>
-        </g>
-    </svg>
+    <div>
+        <svg ref="planets" viewBox="0 0 486 420" id="planets" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <filter id="glow" width="5" height="5" x="-1" y="-1" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0.7" flood-color="#000" result="flood"/>
+                    <feComposite in="SourceGraphic" in2="flood" operator="in" result="composite1"/>
+                    <feGaussianBlur in="composite1" stdDeviation="3" result="blur"/>
+                    <feOffset dx="0" dy="0" result="offset" />
+                    <feComposite in="SourceGraphic" in2="offset" result="composite2"/>
+                </filter>
+            </defs>
+            <g fill="none" stroke="#555" stroke-width="2.5" stroke-linecap="round">
+                <path v-for="bond in bonds" :d="bondPath[bond.id].path" :opacity="bondPath[bond.id].opacity"/>
+            </g>
+            <g filter="url(#glow)" stroke-width=".5">
+                <circle v-for="planet in planets" v-bind="planet" :stroke="planet.fill"/>
+            </g>
+        </svg>
+    </div>
 </template>
 
 <script>
@@ -78,11 +80,14 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 svg#planets {
-    max-height: 400px;
-    right: 0;
+    display: block;
+    max-height: 420px;
     border-radius: 10px;
-    float: right;
+    max-width: 486px;
+    width: calc(100% - 40px);
+    padding: 0 20px 0 20px;
+    margin: 0 auto;
 }
 </style>

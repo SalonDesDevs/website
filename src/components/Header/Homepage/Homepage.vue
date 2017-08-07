@@ -57,22 +57,14 @@ div.header-content {
         padding-top: 60px;
         min-width: 600px !important;
     }
-    div.presentation-container > div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    div.presentation-container > div > h1 {
-        text-align: center;
-    }
 }
 
 @media (max-width: 600px) {
     div.presentation-container {
         min-width: auto !important;
         width: 100%;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 

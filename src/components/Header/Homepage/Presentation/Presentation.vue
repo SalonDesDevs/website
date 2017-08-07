@@ -56,4 +56,12 @@ button.join:hover {
     cursor: pointer;
     cursor: hand;
 }
+@media (max-width: 1140px) {
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 </style>

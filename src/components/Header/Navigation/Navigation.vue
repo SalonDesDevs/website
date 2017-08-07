@@ -1,15 +1,11 @@
 <template>
     <div class="navigation-bar">
-        <table>
-            <tr>
-                <td class="left half">
-                    <navigation-left></navigation-left>
-                </td>
-                <td class="right half">
-                    <navigation-right></navigation-right>
-                </td>
-            </tr>
-        </table>
+        <div class="left">
+            <navigation-left></navigation-left>
+        </div>
+        <div class="right">
+            <navigation-right></navigation-right>
+        </div>
     </div>
 </template>
 
@@ -34,19 +30,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-table {
+div.navigation-bar {
     padding-left: 5%;
     padding-right: 5%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-td.left {
-    overflow: hidden;
+div.left {
+    display: inline-block;
+    flex-grow: 1;
 }
 
-td.right {
-    overflow: hidden;
+div.right {
+    display: inline-block;
+    flex-grow: 1;
     text-align: right;
+}
+
+@media (max-width: 570px) {
+    div {
+        text-align: center;
+    }
 }
 </style>
