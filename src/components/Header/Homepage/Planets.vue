@@ -57,19 +57,21 @@ export default {
                 let moveY = Math.random() * 2 * this.speed - this.speed;
                 // Time interval at which the direction is reversed.
                 let lifetime = Math.floor(Math.random() * 5000) + 5000;
-                let start = Date.now();
+                const start = Date.now();
                 // Function to determine the speed according to the lifetime
                 let accelerationValue = time => - Math.pow((time*2/lifetime - 1), 4) + 1;
                 console.log({lifetime, start, accelerationValue});
                 // TODO one loop ? elapsed / lifetime % 2 * 2 - 1
-                setInterval(() => {
+                const loop = () => {
                     if(planet.cx + planet.r >= 486 || planet.cx - planet.r <= 0) moveX = -moveX;
                     if(planet.cy + planet.r >= 420 || planet.cy - planet.r <= 0) moveY = -moveY;
                     // When we are close to reversing the direction (see below), slow down the planet.
                     let acc = accelerationValue((Date.now() - start) % lifetime);
                     planet.cx += moveX * acc;
                     planet.cy += moveY * acc;
-                }, 30);
+                    setTimeout(loop, 30);
+                };
+                loop();
                 // Prevent excessive moving around. Planets end up overlapping, wich is kinda ugly
                 setInterval(() => {
                     moveX = -moveX;
