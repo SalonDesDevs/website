@@ -61,6 +61,7 @@ export default {
                 // Function to determine the speed according to the lifetime
                 let accelerationValue = time => - Math.pow((time*2/lifetime - 1), 4) + 1;
                 console.log({lifetime, start, accelerationValue});
+                // TODO one loop ? elapsed / lifetime % 2 * 2 - 1
                 setInterval(() => {
                     if(planet.cx + planet.r >= 486 || planet.cx - planet.r <= 0) moveX = -moveX;
                     if(planet.cy + planet.r >= 420 || planet.cy - planet.r <= 0) moveY = -moveY;
