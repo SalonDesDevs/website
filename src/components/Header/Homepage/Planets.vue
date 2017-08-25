@@ -56,8 +56,8 @@ export default {
             const randomVelocity = () => Math.random() * 2 * this.speed - this.speed;
             const start = Date.now();
             let frameCount = 0;
-            let shouldStart = true;
-            const loop = () => {
+            let shouldLoop = true;
+            const loopInterval = setInterval(() => {
                 frameCount++;
                 this.planets.forEach(planet => {
                     if(planet.cx + planet.r >= 486 || planet.cx - planet.r <= 0) planet.moveX = -planet.moveX;
@@ -67,21 +67,24 @@ export default {
                     const elapsed = now - start;
                     const acc = accelerationValue(elapsed % planet.lifetime, planet.lifetime);
                     // Prevent excessive moving around. Planets end up overlapping, wich is kinda ugly
-                    const sign = Math.floor(elapsed / planet.lifetime) % 2 ? 1 : -1;
-                    planet.cx += planet.moveX * acc * sign;
-                    planet.cy += planet.moveY * acc * sign;
-                    if (shouldLoop) setTimeout(loop, 30);
+                    // const sign = Math.floor(elapsed / planet.lifetime) % 2 ? 1 : -1;
+                    planet.cx += planet.moveX * acc;
+                    planet.cy += planet.moveY * acc;
+                    if (!shouldLoop) clearInterval(loopInterval)
                 });
-            };
+            }, 30);
             this.planets.forEach(planet => {
                 // Speed on each axis. No flooring for better randomness in the directions.
                 planet.moveX = randomVelocity();
                 planet.moveY = randomVelocity();
                 // Time interval at which the direction is reversed.
                 planet.lifetime = Math.floor(Math.random() * 5000) + 5000;
+                setInterval(() => {
+                    planet.moveX *= -1;
+                    planet.moveY *= -1;
+                }, planet.lifetime);
             });
-            loop();
-            setTimeout(() => shouldLoop = frameCount >= 100, frameCount = 0, 5000);
+            setTimeout(() => {shouldLoop = frameCount >= 100, frameCount = 0}, 5000);
         }
     }
 }
