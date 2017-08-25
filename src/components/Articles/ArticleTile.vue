@@ -1,7 +1,9 @@
 <template>
     <div>
-        <img :src="picture" />
-        <h3> {{ title }}</h3>
+        <a :href="url">
+            <img :src="picture" />
+            <h3> {{ title }}</h3>
+        </a>
         <p> {{ author }} {{ date }} </p>
     </div>
 </template>
@@ -10,7 +12,7 @@
 import articles from '../../articles.json'
 export default {
     name: 'last-articles',
-    props: ['title', 'author', 'date', 'picture'],
+    props: ['title', 'url', 'author', 'date', 'picture'],
 }
 </script>
 
@@ -18,6 +20,7 @@ export default {
 img {
     border-radius: 5px;
     box-shadow: 0 2px 2px 0 rgba(42, 42, 42, 0.3);
+    transition: all .1s ease-in-out;
 }
 
 h3, p {
@@ -30,6 +33,15 @@ h3 {
     margin-top: 10px;
     font-size: 18px;
     text-transform: capitalize;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover > img {
+    transform: scale(1.01);
+    box-shadow: 0 2px 8px 0px rgba(42, 42, 42, 0.3);
 }
 
 p {
