@@ -55,33 +55,36 @@ export default {
             const accelerationValue = (time, lifetime) => - Math.pow((time*2/lifetime - 1), 4) + 1;
             const randomVelocity = () => Math.random() * 2 * this.speed - this.speed;
             const start = Date.now();
+            let previousFrameTime = 0;
             this.planets.forEach(planet => {
                 // Speed on each axis. No flooring for better randomness in the directions.
                 planet.moveX = randomVelocity();
                 planet.moveY = randomVelocity();
                 // Time interval at which the direction is reversed.
                 planet.lifetime = Math.floor(Math.random() * 5000) + 5000;
+                // Prevent excessive moving around. Planets end up overlapping, wich is kinda ugly
                 setInterval(() => {
                     planet.moveX *= -1;
                     planet.moveY *= -1;
                 }, planet.lifetime);
             });
-            const loop = () => {
+            const loop = (frameTime) => {
+                window.requestAnimationFrame(loop);
+                if(!previousFrameTime) previousFrameTime = frameTime - 16;
+                const delta = frameTime - previousFrameTime;
+                previousFrameTime = frameTime;
                 this.planets.forEach(planet => {
                     if(planet.cx + planet.r >= 486 || planet.cx - planet.r <= 0) planet.moveX = -planet.moveX;
                     if(planet.cy + planet.r >= 420 || planet.cy - planet.r <= 0) planet.moveY = -planet.moveY;
-                    // When we are close to reversing the direction (see below), slow down the planet.
+                    // When we are close to reversing the direction (see above), slow down the planet.
                     const now = Date.now();
                     const elapsed = now - start;
                     const acc = accelerationValue(elapsed % planet.lifetime, planet.lifetime);
-                    // Prevent excessive moving around. Planets end up overlapping, wich is kinda ugly
-                    // const sign = Math.floor(elapsed / planet.lifetime) % 2 ? 1 : -1;
-                    planet.cx += planet.moveX * acc;
-                    planet.cy += planet.moveY * acc;
+                    planet.cx += planet.moveX * acc * (delta / 32);
+                    planet.cy += planet.moveY * acc * (delta / 32);
                 });
-                window.requestAnimationFrame(loop);
             };
-            loop();
+            window.requestAnimationFrame(loop);
         }
     }
 }
