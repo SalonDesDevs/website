@@ -55,7 +55,7 @@ export default {
             const accelerationValue = (time, lifetime) => - Math.pow((time*2/lifetime - 1), 4) + 1;
             const randomVelocity = () => Math.random() * 2 * this.speed - this.speed;
             const start = Date.now();
-            let previousFrameTime = 0;
+            let previousFrameTime = performance.now();
             this.planets.forEach(planet => {
                 // Speed on each axis. No flooring for better randomness in the directions.
                 planet.moveX = randomVelocity();
@@ -70,7 +70,6 @@ export default {
             });
             const loop = (frameTime) => {
                 window.requestAnimationFrame(loop);
-                if(!previousFrameTime) previousFrameTime = frameTime - 16;
                 const delta = frameTime - previousFrameTime;
                 previousFrameTime = frameTime;
                 this.planets.forEach(planet => {
@@ -85,6 +84,19 @@ export default {
                 });
             };
             window.requestAnimationFrame(loop);
+            // resume after re-focus
+            let visibilityChange, hidden; 
+            if (typeof document.hidden !== 'undefined') {
+                hidden = 'hidden';
+                visibilityChange = 'visibilitychange';
+            } else if (typeof document.msHidden !== 'undefined') {
+                hidden = 'msHidden';
+                visibilityChange = 'msvisibilitychange';
+            } else if (typeof document.webkitHidden !== 'undefined') {
+                hidden = 'webkitHidden';
+                visibilityChange = 'webkitvisibilitychange';
+            }
+            document.addEventListener(visibilityChange, () => {if(!document.hidden) previousFrameTime = performance.now();})
         }
     }
 }
