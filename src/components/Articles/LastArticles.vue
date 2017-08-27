@@ -36,6 +36,7 @@ a, a:hover, a:visited {
     font-size: 18px;
     color: #555;
     margin-top: 30px;
+    margin-bottom: 40px;
     display: block;
 }
 

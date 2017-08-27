@@ -19,8 +19,6 @@ export default {
 
 <style scoped>
 span {
-    text-transform: uppercase;
-    font-weight: 900;
     color: #eee;
 }
 span.blue {
@@ -29,7 +27,9 @@ span.blue {
 h1 {
     margin-top: 0;
     max-width: 550px;
-    font-size: 37px;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 900;
 }
 @media (max-width: 600px) {
     h1 {

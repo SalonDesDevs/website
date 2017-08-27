@@ -2,21 +2,21 @@
     <div id="app">
         <homepage-header></homepage-header>
         <last-articles></last-articles>
+        <discord-presentation></discord-presentation>
     </div>
 </template>
 
 <script>
 import HomepageHeader from './Header/Homepage/Homepage.vue'
 import LastArticles from './Articles/LastArticles.vue'
+import DiscordPresentation from './DiscordPresentation/DiscordPresentation.vue'
 
 export default {
     name: 'homepage',
-    data () {
-        return {}
-    },
     components: {
         HomepageHeader,
-        LastArticles
+        LastArticles,
+        DiscordPresentation
     }
 }
 </script>
