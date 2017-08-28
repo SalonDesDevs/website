@@ -86,18 +86,21 @@
                 <right></right>
             </div>
         </div>
+        <separator-bottom></separator-bottom>
     </section>
 </template>
 
 <script>
 import SeparatorTop from './SeparatorTop.vue'
+import SeparatorBottom from './SeparatorBottom.vue'
 import Right from './Right.vue'
 
 export default {
     name: 'discord-presentation',
     components: {
         SeparatorTop,
-        Right
+        Right,
+        SeparatorBottom
     },
     data () {
         return {members: []}
@@ -166,7 +169,7 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,800&subset=latin-ext');
 section#section-discord-presentation {
-    background-color: #dedede;
+    background-color: #f0f0f0;
 }
 
 svg#phone-svg {
@@ -190,7 +193,6 @@ svg#phone-svg {
 
 div.flex-container {
     display: flex;
-    padding-bottom: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
