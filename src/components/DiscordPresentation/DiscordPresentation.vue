@@ -55,27 +55,29 @@
                         </g>
                         <foreignObject width="158.5" height="365" rx="5" ry="5" x="86" y="90">
                             <div id="discord-phone-drawer">
-                                <template v-if="sysadmin.length > 0">
-                                    <h1>sysadmin - {{ sysadmin.length }}</h1>
-                                    <div class="user-container" v-for="user in sysadmin">
-                                        <img :src="user.avatar_url" />
-                                        <span class="sysadmin">{{ user.username }}</span>
-                                    </div>
-                                </template>
-                                <template v-if="graphiste.length > 0">
-                                    <h1>graphiste - {{ graphiste.length }}</h1>
-                                    <div class="user-container" v-for="user in graphiste">
-                                        <img :src="user.avatar_url" />
-                                        <span class="graphiste">{{ user.nick || user.username }}</span>
-                                    </div>
-                                </template>
-                                <template v-if="dev.length > 0">
-                                    <h1>développeur - {{ dev.length }}</h1>
-                                    <div class="user-container" v-for="user in dev">
-                                        <img :src="user.avatar_url" />
-                                        <span class="dev">{{ user.nick || user.username }}</span>
-                                    </div>
-                                </template>
+                                <div class="scrollable">
+                                    <template v-if="sysadmin.length > 0">
+                                        <h1>sysadmin - {{ sysadmin.length }}</h1>
+                                        <div class="user-container" v-for="user in sysadmin">
+                                            <img :src="user.avatar_url" />
+                                            <span class="sysadmin">{{ user.username }}</span>
+                                        </div>
+                                    </template>
+                                    <template v-if="graphiste.length > 0">
+                                        <h1>graphiste - {{ graphiste.length }}</h1>
+                                        <div class="user-container" v-for="user in graphiste">
+                                            <img :src="user.avatar_url" />
+                                            <span class="graphiste">{{ user.nick || user.username }}</span>
+                                        </div>
+                                    </template>
+                                    <template v-if="dev.length > 0">
+                                        <h1>développeur - {{ dev.length }}</h1>
+                                        <div class="user-container" v-for="user in dev">
+                                            <img :src="user.avatar_url" />
+                                            <span :class="{dev: true, admin: user.isAdmin}">{{ user.nick || user.username }}</span>
+                                        </div>
+                                    </template>
+                                </div>
                             </div>
                         </foreignObject>
                     </svg>
@@ -144,6 +146,13 @@ export default {
                 user => {
                     user.nick = user.nick || user.username;
                     user.lnick = user.nick.toLowerCase();
+                    user.isAdmin = user.username === 'DeltaEvo' ||
+                        user.username === 'Litarvan' ||
+                        user.username === 'FliiFe' ||
+                        user.username === 'Loïc' ||
+                        user.username === 'Vavaballz' ||
+                        user.username === '(Psy) Pierre.G' || 
+                        user.username === 'MinusKube'
                     return user;
                 }
             ).sort(
@@ -200,13 +209,19 @@ div.right {
 
 div#discord-phone-drawer {
     width: 100%;
-    max-height: 100%;
+    height: 100%;
     background-color: #282b30;
     font-family: 'Open Sans', sans-serif;
     overflow: hidden;
 }
 
-div#discord-phone-drawer > h1 { 
+div.scrollable {
+    max-height: 100%;
+    margin-right: -60px;
+    overflow: auto;
+}
+
+div#discord-phone-drawer > div > h1 {
     margin: 0;
     margin-bottom: 8px;
     padding: 8px 0 0 8px;
@@ -217,6 +232,10 @@ div#discord-phone-drawer > h1 {
 
 span.sysadmin {
     color: #c2214d;
+}
+
+span.admin {
+    color: rgb(231, 76, 60) !important;
 }
 
 span.graphiste {
