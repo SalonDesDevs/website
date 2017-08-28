@@ -57,14 +57,17 @@ div.header-content {
         padding-top: 60px;
         min-width: 600px !important;
     }
+    div.planets-container {
+        display: none;
+    }
 }
 
 @media (max-width: 600px) {
     div.presentation-container {
         min-width: auto !important;
         width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 35px;
+        padding-right: 35px;
     }
 }
 
