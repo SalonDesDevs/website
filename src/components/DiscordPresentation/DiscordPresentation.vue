@@ -64,6 +64,19 @@ svg#phone-svg {
     height: 700px;
 }
 
+@media (max-width: 1140px) {
+    div.flex-container {
+        flex-direction: column !important;
+    }
+    div.left {
+        margin-bottom: 90px;
+    }
+    div.right {
+        margin: 0 35px;
+        max-width: 550px;
+    }
+}
+
 div.flex-container {
     display: flex;
     padding-bottom: 30px;
@@ -81,6 +94,5 @@ div.left {
 
 div.right {
     flex: 1 0 50%;
-    min-width: 550px;
 }
 </style>
