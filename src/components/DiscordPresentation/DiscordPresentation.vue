@@ -20,11 +20,9 @@
                                 <feOffset dy=".5" result="offset"/>
                                 <feComposite in2="offset" in="SourceGraphic" result="composite2"/>
                             </filter>
-                            <pattern id="screenshot" patternUnits="userSpaceOnUse" width="287" 
-                                height="574">
-                                <image xlink:href="../../img/sdd-screenshot.png" x="7" y="0" 
-                                    width="237.6" height="469" />
-                            </pattern>
+                            <clipPath id="clip-rounded-corners-screen">
+                                <rect width="237.639" height="419.639" x="7.181" y="597.543" rx="8" ry="10"/>
+                            </clipPath>
                         </defs>
                         <g transform="translate(0 -562.4)">
                             <path fill="#e6e6e6" stroke="#999" stroke-width="2.494" 
@@ -36,9 +34,9 @@
                             <rect width="247.625" height="487.625" x="2.187" y="563.549" 
                                 fill="#2a2a2a" stroke="#3a3a3a" stroke-width="2.375" ry="34" 
                                 stroke-linecap="round" stroke-linejoin="round"/>
-                            <rect width="237.639" height="419.639" x="7.181" y="597.543"
-                                id="screen" stroke-width="0" ry="5" rx="5"
-                                fill="url(#screenshot)"/>
+                            <image width="237.639" height="419.639" x="7.181" y="597.543"
+                                stroke-width="0" clip-path="url(#clip-rounded-corners-screen)"
+                                xlink:href="../../img/sdd-screenshot.png"/>
                             <rect width="60" height="15" x="96" y="1026.201" fill="#3a3a3a"
                                 rx="6" ry="5.5" filter="url(#b)"/>
                             <g transform="translate(1)">
