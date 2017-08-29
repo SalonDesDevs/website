@@ -3,7 +3,7 @@
         <separator-top></separator-top>
         <div class="flex-container">
             <div class="left">
-                    <svg id="phone-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 252 490">
+                    <svg id="phone-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 700">
                         <defs>
                             <filter id="a" color-interpolation-filters="sRGB">
                                 <feGaussianBlur result="result6" stdDeviation=".5"/>
@@ -17,32 +17,32 @@
                                 <feComposite in2="SourceGraphic" in="flood" operator="in" 
                                     result="composite1"/>
                                 <feGaussianBlur in="composite" stdDeviation=".5" result="blur"/>
-                                <feOffset dy=".5" result="offset"/>
+                                <feOffset dy=".714" result="offset"/>
                                 <feComposite in2="offset" in="SourceGraphic" result="composite2"/>
                             </filter>
                             <clipPath id="clip-rounded-corners-screen">
-                                <rect width="237.639" height="419.639" x="7.181" y="597.543" rx="8" ry="10"/>
+                                <rect width="339.5" height="599.5" x="10.25" y="853.63" rx="11" ry="14"/>
                             </clipPath>
                         </defs>
-                        <g transform="translate(0 -562.4)">
-                            <path fill="#e6e6e6" stroke="#999" stroke-width="2.494" 
-                                d="M1.247 624.347v66.768" stroke-linecap="round" 
+                        <g transform="translate(0 -803.4)">
+                            <path fill="#e6e6e6" stroke="#999" stroke-width="3.562" 
+                                d="M1.781 891.924v95.382" stroke-linecap="round" 
                                 stroke-linejoin="round"/>
-                            <path fill="#e6e6e6" stroke="#999" stroke-width="2.143" 
-                                d="M251.07 659.573v31.718" stroke-linecap="round" 
+                            <path fill="#e6e6e6" stroke="#999" stroke-width="3.061" 
+                                d="M358.67 942.247v45.311" stroke-linecap="round" 
                                 stroke-linejoin="round"/>
-                            <rect width="247.625" height="487.625" x="2.187" y="563.549" 
-                                fill="#2a2a2a" stroke="#3a3a3a" stroke-width="2.375" ry="34" 
+                            <rect width="353.750" height="696.607" x="3.124" y="805.07" 
+                                fill="#2a2a2a" stroke="#3a3a3a" stroke-width="3.392" ry="48.571" 
                                 stroke-linecap="round" stroke-linejoin="round"/>
-                            <image width="237.639" height="419.639" x="7.181" y="597.543"
+                            <image width="339.5" height="599.5" x="10.25" y="853.63"
                                 stroke-width="0" clip-path="url(#clip-rounded-corners-screen)"
                                 xlink:href="../../img/sdd-screenshot.png"/>
-                            <rect width="60" height="15" x="96" y="1026.201" fill="#3a3a3a"
-                                rx="6" ry="5.5" filter="url(#b)"/>
-                            <g transform="translate(1)">
-                                <rect width="60" height="4" x="95" y="573.362" fill="#3a3a3a" 
-                                    ry="4" rx="2.256"/>
-                                <g transform="matrix(1.5 0 0 1.5 170 -1001.2)" filter="url(#a)">
+                            <rect width="85.71" height="21.42" x="137.14" y="1466.001" fill="#3a3a3a"
+                                rx="8.571" ry="7.857" filter="url(#b)"/>
+                            <g transform="translate(1.42857143)">
+                                <rect width="85.71" height="5.714" x="135.714" y="819.088" fill="#3a3a3a" 
+                                    ry="5" rx="3"/>
+                                <g transform="matrix(2.142 0 0 2.142 242.857 -1425)" filter="url(#a)">
                                     <path fill="#333" 
                                         d="M6 1049.362c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3z"/>
                                     <path 
@@ -51,7 +51,7 @@
                                 </g>
                             </g>
                         </g>
-                        <foreignObject width="158.5" height="365" rx="5" ry="5" x="86" y="90">
+                        <foreignObject width="226.43" height="521.43" rx="7.14" ry="7.14" x="122.86" y="128.57">
                             <div id="discord-phone-drawer">
                                 <div class="scrollable">
                                     <template v-if="sysadmin.length > 0">
@@ -223,10 +223,10 @@ div.scrollable {
 
 div#discord-phone-drawer > div > h1 {
     margin: 0;
-    margin-bottom: 8px;
-    padding: 8px 0 0 8px;
+    margin-bottom: 11px;
+    padding: 11px 0 0 11px;
     color: #fefefe;
-    font-size: 7px;
+    font-size: 10px;
     text-transform: uppercase;
 }
 
@@ -252,26 +252,20 @@ div.user-container {
 }
 
 div.user-container > span {
-    letter-spacing: -0.4px;
-    -webkit-font-smoothing: antialiased;
-    font-size: 8px;
-    margin-left: 8px;
-    height: 28px;
-    line-height: 25px;
+    --webkit-font-smoothing: antialiased;
+    font-size: 11px;
+    margin-left: 11px;
+    height: 40px;
+    line-height: 35px;
     width: 100%;
     box-shadow: 0.1px 0.3px 0 0 rgba(100, 100, 100, 0.3);
     font-weight: 600;
 }
 
-div.separator {
-    height: 1px;
-    width: 100px;
-    background-color: white
+div.user-container > img {
+    width: 28px;
+    margin-left: 11px;
+    border-radius: 28px;
 }
 
-div.user-container > img {
-    width: 20px;
-    margin-left: 8px;
-    border-radius: 20px;
-}
 </style>
