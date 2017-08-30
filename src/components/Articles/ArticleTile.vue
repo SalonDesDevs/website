@@ -21,6 +21,8 @@ img {
     border-radius: 5px;
     box-shadow: 0 2px 2px 0 rgba(42, 42, 42, 0.3);
     transition: all .1s ease-in-out;
+    max-width: 400px;
+    width: 100%;
 }
 
 h3, p {
