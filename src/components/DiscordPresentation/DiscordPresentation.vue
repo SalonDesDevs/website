@@ -114,7 +114,6 @@ export default {
         updateOnline();
         setInterval(updateOnline, 6e4);
         const updateScale = () => { 
-            console.log('resized')
             this.svgScaleFactor = Math.min(1, (document.documentElement.clientWidth - 20) / 360);
         };
         window.addEventListener('resize', updateScale);
