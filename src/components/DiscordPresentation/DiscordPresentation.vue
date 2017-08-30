@@ -3,7 +3,7 @@
         <separator-top></separator-top>
         <div class="flex-container">
             <div class="left">
-                <svg id="phone-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 700">
+                <svg id="phone-svg" xmlns="http://www.w3.org/2000/svg" :style="'transform: scale(' + svgScaleFactor + ')'" viewBox="0 0 360 700">
                     <defs>
                         <filter id="a" color-interpolation-filters="sRGB">
                             <feGaussianBlur result="result6" stdDeviation=".5"/>
@@ -101,7 +101,10 @@ export default {
         SeparatorBottom
     },
     data () {
-        return {members: []}
+        return {
+            members: [],
+            svgScaleFactor: 1
+        }
     },
     mounted () {
         const updateOnline = () => fetch('https://canary.discordapp.com/api/guilds/186941943941562369/widget.json')
@@ -110,6 +113,12 @@ export default {
             .catch(err => console.log(err));
         updateOnline();
         setInterval(updateOnline, 6e4);
+        const updateScale = () => { 
+            console.log('resized')
+            this.svgScaleFactor = Math.min(1, (document.documentElement.clientWidth - 20) / 360);
+        };
+        window.addEventListener('resize', updateScale);
+        updateScale()
     },
     computed: {
         sysadmin: function() {
