@@ -3,82 +3,82 @@
         <separator-top></separator-top>
         <div class="flex-container">
             <div class="left">
-                    <svg id="phone-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 700">
-                        <defs>
-                            <filter id="a" color-interpolation-filters="sRGB">
-                                <feGaussianBlur result="result6" stdDeviation=".5"/>
-                                <feComposite in2="result6" operator="atop" in="SourceGraphic" 
-                                    result="result8"/>
-                                <feComposite in2="SourceAlpha" in="result8" operator="atop" 
-                                    result="result9"/>
-                            </filter>
-                            <filter id="b" color-interpolation-filters="sRGB">
-                                <feFlood flood-opacity=".4" flood-color="#000" result="flood"/>
-                                <feComposite in2="SourceGraphic" in="flood" operator="in" 
-                                    result="composite1"/>
-                                <feGaussianBlur in="composite" stdDeviation=".5" result="blur"/>
-                                <feOffset dy=".714" result="offset"/>
-                                <feComposite in2="offset" in="SourceGraphic" result="composite2"/>
-                            </filter>
-                            <clipPath id="clip-rounded-corners-screen">
-                                <rect width="339.5" height="599.5" x="10.25" y="853.63" rx="11" ry="14"/>
-                            </clipPath>
-                        </defs>
-                        <g transform="translate(0 -803.4)">
-                            <path fill="#e6e6e6" stroke="#999" stroke-width="3.562" 
-                                d="M1.781 891.924v95.382" stroke-linecap="round" 
-                                stroke-linejoin="round"/>
-                            <path fill="#e6e6e6" stroke="#999" stroke-width="3.061" 
-                                d="M358.67 942.247v45.311" stroke-linecap="round" 
-                                stroke-linejoin="round"/>
-                            <rect width="353.750" height="696.607" x="3.124" y="805.07" 
-                                fill="#2a2a2a" stroke="#3a3a3a" stroke-width="3.392" ry="48.571" 
-                                stroke-linecap="round" stroke-linejoin="round"/>
-                            <image width="339.5" height="599.5" x="10.25" y="853.63"
-                                stroke-width="0" clip-path="url(#clip-rounded-corners-screen)"
-                                xlink:href="../../img/sdd-screenshot.png"/>
-                            <rect width="85.71" height="21.42" x="137.14" y="1466.001" fill="#3a3a3a"
-                                rx="8.571" ry="7.857" filter="url(#b)"/>
-                            <g transform="translate(1.42857143)">
-                                <rect width="85.71" height="5.714" x="135.714" y="819.088" fill="#3a3a3a" 
-                                    ry="5" rx="3"/>
-                                <g transform="matrix(2.142 0 0 2.142 242.857 -1425)" filter="url(#a)">
-                                    <path fill="#333" 
-                                        d="M6 1049.362c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3z"/>
-                                    <path 
-                                        fill="#1a1a1a" d="M4 1049.362c0 .553-.448 1-1 1s-1-.447-1-1c0-.552.448-1 1-1s1 .448 1 1z"
-                                        opacity=".66"/>
-                                </g>
+                <svg id="phone-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 700">
+                    <defs>
+                        <filter id="a" color-interpolation-filters="sRGB">
+                            <feGaussianBlur result="result6" stdDeviation=".5"/>
+                            <feComposite in2="result6" operator="atop" in="SourceGraphic" 
+                                result="result8"/>
+                            <feComposite in2="SourceAlpha" in="result8" operator="atop" 
+                                result="result9"/>
+                        </filter>
+                        <filter id="b" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity=".4" flood-color="#000" result="flood"/>
+                            <feComposite in2="SourceGraphic" in="flood" operator="in" 
+                                result="composite1"/>
+                            <feGaussianBlur in="composite" stdDeviation=".5" result="blur"/>
+                            <feOffset dy=".714" result="offset"/>
+                            <feComposite in2="offset" in="SourceGraphic" result="composite2"/>
+                        </filter>
+                        <clipPath id="clip-rounded-corners-screen">
+                            <rect width="339.5" height="599.5" x="10.25" y="853.63" rx="11" ry="14"/>
+                        </clipPath>
+                    </defs>
+                    <g transform="translate(0 -803.4)">
+                        <path fill="#e6e6e6" stroke="#999" stroke-width="3.562" 
+                            d="M1.781 891.924v95.382" stroke-linecap="round" 
+                            stroke-linejoin="round"/>
+                        <path fill="#e6e6e6" stroke="#999" stroke-width="3.061" 
+                            d="M358.67 942.247v45.311" stroke-linecap="round" 
+                            stroke-linejoin="round"/>
+                        <rect width="353.750" height="696.607" x="3.124" y="805.07" 
+                            fill="#2a2a2a" stroke="#3a3a3a" stroke-width="3.392" ry="48.571" 
+                            stroke-linecap="round" stroke-linejoin="round"/>
+                        <image width="339.5" height="599.5" x="10.25" y="853.63"
+                            stroke-width="0" clip-path="url(#clip-rounded-corners-screen)"
+                            xlink:href="../../img/sdd-screenshot.png"/>
+                        <rect width="85.71" height="21.42" x="137.14" y="1466.001" fill="#3a3a3a"
+                            rx="8.571" ry="7.857" filter="url(#b)"/>
+                        <g transform="translate(1.42857143)">
+                            <rect width="85.71" height="5.714" x="135.714" y="819.088" fill="#3a3a3a" 
+                                ry="5" rx="3"/>
+                            <g transform="matrix(2.142 0 0 2.142 242.857 -1425)" filter="url(#a)">
+                                <path fill="#333" 
+                                    d="M6 1049.362c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3z"/>
+                                <path 
+                                    fill="#1a1a1a" d="M4 1049.362c0 .553-.448 1-1 1s-1-.447-1-1c0-.552.448-1 1-1s1 .448 1 1z"
+                                    opacity=".66"/>
                             </g>
                         </g>
-                        <foreignObject width="226.43" height="521.43" rx="7.14" ry="7.14" x="122.86" y="128.57">
-                            <div id="discord-phone-drawer">
-                                <div class="scrollable">
-                                    <template v-if="sysadmin.length > 0">
-                                        <h1>sysadmin - {{ sysadmin.length }}</h1>
-                                        <div class="user-container" v-for="user in sysadmin">
-                                            <img :src="user.avatar_url" />
-                                            <span class="sysadmin">{{ user.username }}</span>
-                                        </div>
-                                    </template>
-                                    <template v-if="graphiste.length > 0">
-                                        <h1>graphiste - {{ graphiste.length }}</h1>
-                                        <div class="user-container" v-for="user in graphiste">
-                                            <img :src="user.avatar_url" />
-                                            <span class="graphiste">{{ user.nick || user.username }}</span>
-                                        </div>
-                                    </template>
-                                    <template v-if="dev.length > 0">
-                                        <h1>développeur - {{ dev.length }}</h1>
-                                        <div class="user-container" v-for="user in dev">
-                                            <img :src="user.avatar_url" />
-                                            <span :class="{dev: true, admin: user.isAdmin}">{{ user.nick || user.username }}</span>
-                                        </div>
-                                    </template>
-                                </div>
+                    </g>
+                    <foreignObject width="226.43" height="521.43" rx="7.14" ry="7.14" x="122.86" y="128.57">
+                        <div id="discord-phone-drawer">
+                            <div class="scrollable">
+                                <template v-if="sysadmin.length > 0">
+                                    <h1>sysadmin - {{ sysadmin.length }}</h1>
+                                    <div class="user-container" v-for="user in sysadmin">
+                                        <img :src="user.avatar_url" />
+                                        <span class="sysadmin">{{ user.nick || user.username }}</span>
+                                    </div>
+                                </template>
+                                <template v-if="graphiste.length > 0">
+                                    <h1>graphiste - {{ graphiste.length }}</h1>
+                                    <div class="user-container" v-for="user in graphiste">
+                                        <img :src="user.avatar_url" />
+                                        <span class="graphiste">{{ user.nick || user.username }}</span>
+                                    </div>
+                                </template>
+                                <template v-if="dev.length > 0">
+                                    <h1>développeur - {{ dev.length }}</h1>
+                                    <div class="user-container" v-for="user in dev">
+                                        <img :src="user.avatar_url" />
+                                        <span :class="{dev: true, admin: user.isAdmin}">{{ user.nick || user.username }}</span>
+                                    </div>
+                                </template>
                             </div>
-                        </foreignObject>
-                    </svg>
+                        </div>
+                    </foreignObject>
+                </svg>
             </div>
             <div class="right">
                 <right></right>
