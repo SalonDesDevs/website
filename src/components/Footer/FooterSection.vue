@@ -21,7 +21,7 @@
         <div class="footer-separator"></div>
         <div class="bottomline">
             <p class="footer-about">Design par <a target="_blank" href="https://twitter.com/valentin_SLD_">valmax72</a></p>
-            <p class="copyright">Copyright Salon des Développeurs.</p>
+            <p class="copyright">Copyright &copy; Salon des Développeurs.</p>
         </div>
     </footer>
 </template>
@@ -60,6 +60,11 @@ svg {
     width: 60px;
     fill: #888;
     margin: 20px;
+    transition: all .1s ease-in-out;
+}
+
+svg:hover {
+    transform: scale(1.1);
 }
 
 .github:hover {
