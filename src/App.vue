@@ -28,18 +28,4 @@ body, html {
 body {
     background-color: #fafafa;
 }
-
-::-webkit-scrollbar-thumb {
-    background: #444;
-    -webkit-border-radius: 1ex;
-    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
-}
-::-webkit-scrollbar-corner {
-    background: transparent;
-}
-::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
-    background: #2a2a2a;
-}
 </style>
