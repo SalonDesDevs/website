@@ -42,7 +42,7 @@ footer {
 h3 {
     margin: 0;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 30px;
     padding-bottom: 20px;
     font-weight: normal;
     font-size: 28px;
@@ -85,7 +85,8 @@ svg {
 div.footer-separator {
     width: calc(100% - 130px);
     margin: 0 65px;
-    height: 3px;
+    height: 1px;
+    margin-top: 20px;
     background-color: #444;
     border-radius: 5px;
 }
