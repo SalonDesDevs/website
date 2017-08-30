@@ -54,7 +54,6 @@ div.header-content {
 
 @media (max-width: 1140px) {
     div.presentation-container {
-        padding-top: 60px;
         min-width: 600px !important;
     }
     div.planets-container {
