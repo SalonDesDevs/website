@@ -14,7 +14,7 @@ import ArticleTile from './ArticleTile.vue'
 export default {
     name: 'last-articles',
     data () {
-        return {articles};
+        return {articles: articles.slice(0, 2)};
     },
     components: {
         ArticleTile
