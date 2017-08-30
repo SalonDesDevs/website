@@ -23,7 +23,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 a, a:visited {
     color: #d1d1d1;
     text-decoration: none;

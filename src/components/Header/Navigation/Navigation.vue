@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 div.navigation-bar {
     padding-left: 5%;
     padding-right: 5%;
