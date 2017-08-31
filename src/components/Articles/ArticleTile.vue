@@ -21,6 +21,7 @@ img {
     box-shadow: 0 2px 2px 0 rgba(42, 42, 42, 0.3);
     transition: all .1s ease-in-out;
     max-width: 400px;
+    max-height: 320px;
     width: 100%;
 }
 
@@ -56,6 +57,6 @@ p {
 div {
     display: inline-block;
     text-align: left;
-    margin: auto 20px 30px 20px;
+    margin: auto 50px 30px;
 }
 </style>

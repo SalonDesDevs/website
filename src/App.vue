@@ -9,7 +9,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,600,700,700i,900&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,600,700,700i,900i&subset=latin-ext');
 
 body, html {
     margin: 0;
