@@ -55,21 +55,33 @@ div.header-content {
 }
 
 @media (max-width: 1225px) {
+    div.separator-container {
+        margin-top: auto !important;
+    }
+    div.header-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-bottom: 30px;
+        padding-top: 0;
+    }
     div.article-title-container {
-        min-width: 600px !important;
+        min-width: 550px !important;
     }
     div.big-preview-container > img {
         float: unset !important;
         margin: 0 auto;
+    }
+    img {
+        max-width: calc(100% - 20px);
     }
 }
 
 @media (max-width: 600px) {
     div.article-title-container {
         min-width: auto !important;
-        width: 100%;
-        padding-left: 35px;
-        padding-right: 35px;
+        width: calc(100% - 20px);
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 
@@ -91,7 +103,7 @@ p.last-article {
 }
 
 p.last-article-title {
-    font-size: 36px;
+    font-size: 33px;
     margin: 0;
     margin-top: 5px;
     font-weight: 700;
