@@ -1,7 +1,7 @@
 <template>
     <div>
         <search-button-bar></search-button-bar>
-        <a href="/login"><button>Connexion</button></a>
+        <router-link to="/login"><button>Connexion</button></router-link>
     </div>
 </template>
 

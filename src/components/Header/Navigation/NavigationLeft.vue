@@ -1,7 +1,7 @@
 <template>
     <div>
-        <a href="/"><navigation-logo></navigation-logo></a>
-        <a v-bind:href="values[name]" v-for="name in names">{{ name }}</a>
+        <router-link to="/"><navigation-logo></navigation-logo></router-link>
+        <router-link v-bind:to="values[name]" :key="name" v-for="name in names">{{ name }}</router-link>
     </div>
 </template>
 
