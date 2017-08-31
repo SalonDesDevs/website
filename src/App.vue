@@ -3,17 +3,17 @@
 </template>
 
 <script>
-import Homepage from './components/Homepage.vue'
+import Homepage from './components/Homepage.vue';
 
 export default {
     name: 'app',
     data () {
-        return {}
+        return {};
     },
     components: {
         Homepage
     }
-}
+};
 </script>
 
 <style>
