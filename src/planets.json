@@ -1,4 +1,5 @@
 {
+    "moveInitialized": false,
     "speed": 0.10,
     "planets": [{
             "id": "3",

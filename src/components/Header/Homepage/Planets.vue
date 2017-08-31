@@ -25,9 +25,7 @@ import planets from '../../../planets.json';
 export default {
     name: 'planets',
     data () {
-        return Object.assign(planets, {
-            moveInitialized: false
-        });
+        return planets;
     },
     computed: {
         bondPath: function() {
