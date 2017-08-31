@@ -1,5 +1,9 @@
 <template>
-    <router-view></router-view>
+    <div id="app">
+        <transition name="fade" mode="out-in" appear>
+            <router-view></router-view>
+        </transition>
+    </div>
 </template>
 
 <script>
@@ -9,7 +13,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,600,700,700i,900i&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,600,700,700i,900,900i&subset=latin-ext');
 
 body, html {
     margin: 0;
@@ -18,6 +22,14 @@ body, html {
 }
 
 body {
-    background-color: #fafafa;
+    background-color: #2a2a2a;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0
 }
 </style>

@@ -29,19 +29,21 @@ h2, a {
     color: #3a3a3a;
     margin-top: 0;
     font-size: 28px;
-    margin-bottom: 70px;
+    padding-bottom: 70px;
+    margin-bottom: 0;
 }
 
 a, a:hover, a:visited {
     font-size: 18px;
     color: #555;
     margin-top: 30px;
-    margin-bottom: 40px;
+    padding-bottom: 40px;
     display: block;
 }
 
 section {
     text-align: center;
+    background-color: #fafafa;
 }
 
 div.articles-container {
