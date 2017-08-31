@@ -7,7 +7,7 @@
 
 <script>
 import endpoints from '../../../endpoints.json';
-import NavigationLogo from './NavigationLogo.vue'
+import NavigationLogo from './NavigationLogo.vue';
 
 export default {
     name: 'navigation-left',
@@ -15,12 +15,12 @@ export default {
         return {
             names: Object.keys(endpoints),
             values: endpoints
-        }
+        };
     },
     components: {
         NavigationLogo,
     }
-}
+};
 </script>
 
 <style scoped>

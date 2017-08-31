@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 export default {
     name: 'presentation',
     props: ['content'],
@@ -14,7 +13,7 @@ export default {
             return this.content.split('~');
         }
     }
-}
+};
 </script>
 
 <style scoped>

@@ -8,13 +8,13 @@
 </template>
 
 <script>
-import header from '../../../../header.json'
-import Catchphrase from './Catchphrase.vue'
+import header from '../../../../header.json';
+import Catchphrase from './Catchphrase.vue';
 
 export default {
     name: 'presentation',
     data () {
-        return header
+        return header;
     },
     computed: {
         catchPhraseArray: function() {
@@ -24,7 +24,7 @@ export default {
     components: {
         Catchphrase
     }
-}
+};
 </script>
 
 <style scoped>

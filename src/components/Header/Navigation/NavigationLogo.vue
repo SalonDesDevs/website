@@ -21,10 +21,7 @@
 <script>
 export default {
     name: 'navigation-logo',
-    data () {
-        return {};
-    }
-}
+};
 </script>
 
 <style scoped>

@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import articles from '../../articles.json'
-import ArticleTile from './ArticleTile.vue'
+import articles from '../../articles.json';
+import ArticleTile from './ArticleTile.vue';
 export default {
     name: 'last-articles',
     data () {
@@ -19,7 +19,7 @@ export default {
     components: {
         ArticleTile
     }
-}
+};
 </script>
 
 <style scoped>

@@ -3,21 +3,20 @@
 </template>
 
 <script>
-import particleSettings from '../../particle-settings.json'
+import particleSettings from '../../particle-settings.json';
 
 export default {
     name: 'particle',
-    data () {
-        return {}
-    },
     mounted () {
         this.$nextTick(() => this.initParticleJS());
     },
     methods: {
         initParticleJS() {
+            //eslint-disable-next-line no-undef
             particlesJS('top-container-particles', particleSettings);
         }
-    }}
+    }
+};
 </script>
 
 <style>

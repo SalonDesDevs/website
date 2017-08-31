@@ -8,13 +8,13 @@
 </template>
 
 <script>
-import discordPresentation from '../../discord-presentation.json'
+import discordPresentation from '../../discord-presentation.json';
 export default {
     name: 'right',
     data () {
-        return discordPresentation
+        return discordPresentation;
     }
-}
+};
 </script>
 
 <style scoped>

@@ -15,17 +15,14 @@
 </template>
 
 <script>
-import Navigation from '../Navigation/Navigation.vue'
-import Particle from '../Particle.vue'
-import Planets from './Planets.vue'
-import Presentation from './Presentation/Presentation.vue'
-import Separator from './Separator.vue'
+import Navigation from '../Navigation/Navigation.vue';
+import Particle from '../Particle.vue';
+import Planets from './Planets.vue';
+import Presentation from './Presentation/Presentation.vue';
+import Separator from './Separator.vue';
 
 export default {
     name: 'homepage-header',
-    data () {
-        return {}
-    },
     components: {
         Navigation,
         Particle,
@@ -33,7 +30,7 @@ export default {
         Presentation,
         Separator
     }
-}
+};
 </script>
 
 <style>

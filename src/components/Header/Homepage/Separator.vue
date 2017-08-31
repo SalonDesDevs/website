@@ -6,10 +6,8 @@
 
 <script>
 export default {
-    name: 'homepage-header',
-    data () {
-        return {}
-    }}
+    name: 'homepage-header'
+};
 </script>
 
 <style scoped>

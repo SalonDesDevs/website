@@ -21,13 +21,13 @@
 </template>
 
 <script>
-import planets from '../../../planets.json'
+import planets from '../../../planets.json';
 export default {
     name: 'planets',
     data () {
         return Object.assign(planets, {
             moveInitialized: false
-        })
+        });
     },
     computed: {
         bondPath: function() {
@@ -38,7 +38,7 @@ export default {
                 let tPlanet = this.planets.filter(e => e.id == to)[0];
                 result[e.id] = result[e.id] || {};
                 result[e.id].path = `M${sPlanet.cx},${sPlanet.cy}L${tPlanet.cx},${tPlanet.cy}`;
-                result[e.id].opacity = 5e4 / (Math.pow(sPlanet.cx - tPlanet.cx, 2) + Math.pow(sPlanet.cy - tPlanet.cy, 2))
+                result[e.id].opacity = 5e4 / (Math.pow(sPlanet.cx - tPlanet.cx, 2) + Math.pow(sPlanet.cy - tPlanet.cy, 2));
             });
             return result;
         }
@@ -96,10 +96,13 @@ export default {
                 hidden = 'webkitHidden';
                 visibilityChange = 'webkitvisibilitychange';
             }
-            document.addEventListener(visibilityChange, () => {if(!document.hidden) previousFrameTime = performance.now();})
+            document.addEventListener(visibilityChange, () => {
+                if(!document[hidden])
+                    previousFrameTime = performance.now();
+            });
         }
     }
-}
+};
 </script>
 
 <style scoped>

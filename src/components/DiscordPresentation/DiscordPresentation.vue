@@ -89,9 +89,9 @@
 </template>
 
 <script>
-import SeparatorTop from './SeparatorTop.vue'
-import SeparatorBottom from './SeparatorBottom.vue'
-import Right from './Right.vue'
+import SeparatorTop from './SeparatorTop.vue';
+import SeparatorBottom from './SeparatorBottom.vue';
+import Right from './Right.vue';
 
 export default {
     name: 'discord-presentation',
@@ -104,7 +104,7 @@ export default {
         return {
             members: [],
             svgScaleFactor: 1
-        }
+        };
     },
     mounted () {
         const updateOnline = () => fetch('https://canary.discordapp.com/api/guilds/186941943941562369/widget.json')
@@ -117,7 +117,7 @@ export default {
             this.svgScaleFactor = Math.min(1, (document.documentElement.clientWidth - 20) / 360);
         };
         window.addEventListener('resize', updateScale);
-        updateScale()
+        updateScale();
     },
     computed: {
         sysadmin: function() {
@@ -161,7 +161,7 @@ export default {
                         user.username === 'Loïc' ||
                         user.username === 'Vavaballz' ||
                         user.username === '(Psy) Pierre.G' || 
-                        user.username === 'MinusKube'
+                        user.username === 'MinusKube';
                     return user;
                 }
             ).sort(
@@ -169,7 +169,7 @@ export default {
             );
         }
     }
-}
+};
 </script>
 
 <style scoped>

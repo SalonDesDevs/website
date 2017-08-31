@@ -8,11 +8,8 @@
 
 <script>
 export default {
-    name: 'search-button-bar',
-    data () {
-        return {};
-    }
-}
+    name: 'search-button-bar'
+};
 </script>
 
 <style scoped>

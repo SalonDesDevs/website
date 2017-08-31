@@ -9,11 +9,10 @@
 </template>
 
 <script>
-import articles from '../../articles.json'
 export default {
     name: 'last-articles',
     props: ['title', 'url', 'author', 'date', 'picture'],
-}
+};
 </script>
 
 <style scoped>

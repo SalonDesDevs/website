@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import SearchButtonBar from './SearchButtonBar.vue'
+import SearchButtonBar from './SearchButtonBar.vue';
 
 export default {
     name: 'navigation-right',
@@ -16,7 +16,7 @@ export default {
     components: {
         SearchButtonBar
     }
-}
+};
 </script>
 
 <style scoped>

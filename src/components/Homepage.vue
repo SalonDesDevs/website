@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import HomepageHeader from './Header/Homepage/Homepage.vue'
-import LastArticles from './Articles/LastArticles.vue'
-import DiscordPresentation from './DiscordPresentation/DiscordPresentation.vue'
-import FooterSection from './Footer/FooterSection.vue'
+import HomepageHeader from './Header/Homepage/Homepage.vue';
+import LastArticles from './Articles/LastArticles.vue';
+import DiscordPresentation from './DiscordPresentation/DiscordPresentation.vue';
+import FooterSection from './Footer/FooterSection.vue';
 
 export default {
     name: 'homepage',
@@ -22,7 +22,7 @@ export default {
         DiscordPresentation,
         FooterSection
     }
-}
+};
 </script>
 
 <style scoped>
