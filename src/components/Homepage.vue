@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="homepage">
         <homepage-header></homepage-header>
         <last-articles></last-articles>
         <discord-presentation></discord-presentation>
@@ -26,11 +26,12 @@ export default {
 </script>
 
 <style scoped>
-div#app {
+div#homepage {
     overflow-x: hidden;
 }
 
 div.placeholder-twitter {
     height: 800px;
+    background-color: #fafafa;
 }
 </style>
