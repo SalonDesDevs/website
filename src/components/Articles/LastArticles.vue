@@ -4,7 +4,7 @@
         <div class="articles-container">
             <article-tile v-for="article in articles" v-bind="article" :key="article.title"></article-tile>
         </div>
-        <a href="/articles">Voir plus</a>
+        <router-link to="/articles">Voir plus</router-link>
     </section>
 </template>
 
