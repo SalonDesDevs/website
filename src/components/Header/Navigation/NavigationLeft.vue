@@ -1,22 +1,15 @@
 <template>
     <div>
         <router-link to="/"><navigation-logo></navigation-logo></router-link>
-        <router-link v-bind:to="values[name]" :key="name" v-for="name in names">{{ name }}</router-link>
+        <router-link to="/articles">Articles</router-link>
     </div>
 </template>
 
 <script>
-import endpoints from '../../../endpoints.json';
 import NavigationLogo from './NavigationLogo.vue';
 
 export default {
     name: 'navigation-left',
-    data () {
-        return {
-            names: Object.keys(endpoints),
-            values: endpoints
-        };
-    },
     components: {
         NavigationLogo,
     }

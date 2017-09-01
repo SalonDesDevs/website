@@ -10,18 +10,11 @@
 </template>
 
 <script>
-import endpoints from '../../../endpoints.json';
 import NavigationLeft from './NavigationLeft.vue';
 import NavigationRight from './NavigationRight.vue';
 
 export default {
     name: 'navigation',
-    data () {
-        return {
-            names: Object.keys(endpoints),
-            values: endpoints
-        };
-    },
     components: {
         NavigationLeft,
         NavigationRight
