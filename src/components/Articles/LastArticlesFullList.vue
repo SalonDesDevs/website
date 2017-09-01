@@ -3,7 +3,7 @@
         <div class="articles-container">
             <article-tile v-for="article in articles" v-bind="article" :key="article.title"></article-tile>
         </div>
-        <!-- <a href="/articles">Voir plus</a> -->
+        <button v-on:click="more">Voir plus</button>
     </section>
 </template>
 
@@ -15,6 +15,11 @@ export default {
     name: 'last-articles-full-list',
     data () {
         return {articles: articles.slice(1, 5)};
+    },
+    methods: {
+        more: function() {
+            console.log('more');
+        }
     },
     components: {
         ArticleTile
@@ -57,5 +62,24 @@ div.articles-container {
     div.articles-container {
         padding-top: 70px !important;
     }
+}
+
+button {
+    background-color: #396eb8;
+    border: 0px;
+    color: #fafafa;
+    padding: 8px 60px;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(40, 40, 40, 0.5);
+    margin-bottom: 35px;
+    transition: all .1s;
+}
+
+button:hover {
+    box-shadow: 0 4px 6px 0px rgba(40, 40, 40, 0.5);
+    cursor: pointer;
 }
 </style>

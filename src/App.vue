@@ -21,6 +21,10 @@ body, html {
     font-family: 'Lato', Roboto, Arial, sans-serif;
 }
 
+* {
+    font-family: 'Lato', Roboto, Arial, sans-serif;
+}
+
 body {
     background-color: #2a2a2a;
 }
