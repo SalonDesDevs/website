@@ -128,10 +128,10 @@ div.separator-container {
     position: relative;
     margin-top: -120px;
     z-index: -1;
-    height: 125px;
+    height: 130px;
 }
 
 div.container {
-    height: 125px !important;
+    height: 130px !important;
 }
 </style>
