@@ -122,6 +122,7 @@ img {
     float: right;
     margin-right: 40px;
     border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(40, 40, 40, 0.5);
 }
 
 div.separator-container {
