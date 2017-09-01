@@ -5,7 +5,7 @@ import App from './App.vue';
 Vue.use(VueRouter);
 
 import Homepage from './components/Homepage.vue';
-import Articles from './components/Articles.vue'
+import Articles from './components/Articles.vue';
 
 const routes = [
     {
@@ -24,11 +24,11 @@ const routes = [
 
 const router = new VueRouter({
     mode: 'history',
-    routes
+    routes,
+    scrollBehavior: () => ({x: 0, y: 0})
 });
 
-//eslint-disable-next-line no-unused-vars
-const app = new Vue({
+new Vue({
     el: '#app',
     router,
     render: h => h(App)
