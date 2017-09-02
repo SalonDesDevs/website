@@ -1,13 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const PrerenderSpaPlugin = require('prerender-spa-plugin');
 
 module.exports = {
     entry: ['whatwg-fetch', 'particles.js', './src/main.js'],
     output: {
         path: path.resolve(__dirname, './dist'),
-        publicPath: '/',
+        publicPath: '/dist/',
         filename: 'build.js'
     },
     module: {
@@ -40,20 +38,12 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
-        contentBase: path.resolve(__dirname, './dist'),
         noInfo: true
     },
     performance: {
         hints: false
     },
-    devtool: '#eval-source-map',
-    plugins: [
-        new HtmlWebpackPlugin({
-            title: 'Salon des développeurs',
-            template: 'index.html',
-            filename: path.resolve(__dirname, './dist/index.html')
-        })
-    ]
+    devtool: '#eval-source-map'
 };
 
 if (process.env.NODE_ENV === 'production') {
@@ -73,13 +63,6 @@ if (process.env.NODE_ENV === 'production') {
         }),
         new webpack.LoaderOptionsPlugin({
             minimize: true
-        }),
-        new PrerenderSpaPlugin(
-            path.resolve(__dirname, './dist'),
-            ['/articles'],
-            {
-                indexPath: path.resolve(__dirname, './dist/index.html'),
-            }
-        )
+        })
     ]);
 }
