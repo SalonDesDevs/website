@@ -21,7 +21,14 @@ export default {
     head: {
         title: {
             inner: 'Derniers Articles - Salon des développeurs'
-        }
+        },
+        meta: [
+            { property: 'og:title', content: 'Derniers Articles - Salon des développeurs' },
+            { property: 'og:url', content: window.location },
+            { name: 'twitter:title', content: 'Derniers Articles - Salon des développeurs' },
+            { name: 'twitter:description', content: 'Articles écrits par la communauté, sur tout et n\'importe quoi !' },
+            { name: 'description', content: 'Articles écrits par la communauté, sur tout et n\'importe quoi !' }
+        ]
     }
 };
 </script>
