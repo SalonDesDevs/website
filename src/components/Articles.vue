@@ -17,6 +17,11 @@ export default {
         ArticlesHeader,
         FooterSection,
         LastArticlesFullList
+    },
+    head: {
+        title: {
+            inner: 'Derniers Articles - Salon des développeurs'
+        }
     }
 };
 </script>

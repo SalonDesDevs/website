@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-const PrerenderSpaPlugin = require('prerender-spa-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const PrerenderSpaPlugin = require('prerender-spa-plugin');
 
 module.exports = {
     entry: ['whatwg-fetch', 'particles.js', './src/main.js'],
