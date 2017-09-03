@@ -8,13 +8,13 @@
                     <img :src="picture" :alt="title" />
                 </router-link>
             </div>
-            <router-link :to="uri">
-                <div class="article-title-container">
+            <div class="article-title-container">
+                <router-link :to="uri">
                     <p class="last-article">Dernier article</p>
                     <p class="last-article-title">{{ title }}</p>
                     <p class="last-article-author">{{ author + ' - ' + date }}</p>
-                </div>
-            </router-link>
+                </router-link>
+            </div>
         </div>
         <div class="separator-container">
             <separator></separator>
@@ -58,7 +58,7 @@ div.header-content {
     padding-bottom: 0;
 }
 
-@media (max-width: 1225px) {
+@media (max-width: 1240px) {
     div.separator-container {
         margin-top: auto !important;
     }
