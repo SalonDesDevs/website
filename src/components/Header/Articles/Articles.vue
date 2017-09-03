@@ -4,13 +4,17 @@
         <navigation></navigation>
         <div class="header-content">
             <div class="big-preview-container">
-                <img :src="picture" :alt="title" />
+                <router-link :to="uri">
+                    <img :src="picture" :alt="title" />
+                </router-link>
             </div>
-            <div class="article-title-container">
-                <p class="last-article">Dernier article</p>
-                <p class="last-article-title">{{ title }}</p>
-                <p class="last-article-author">{{ author + ' - ' + date }}</p>
-            </div>
+            <router-link :to="uri">
+                <div class="article-title-container">
+                    <p class="last-article">Dernier article</p>
+                    <p class="last-article-title">{{ title }}</p>
+                    <p class="last-article-author">{{ author + ' - ' + date }}</p>
+                </div>
+            </router-link>
         </div>
         <div class="separator-container">
             <separator></separator>
@@ -134,5 +138,19 @@ div.separator-container {
 
 div.container {
     height: 130px !important;
+}
+
+a {
+    color: #fafafa;
+    text-decoration: none;
+    height: fit-content;
+}
+
+div.big-preview-container > a > img {
+    transition: all .1s ease-in-out;
+}
+
+div.big-preview-container > a > img:hover {
+    transform: scale(1.01);
 }
 </style>
