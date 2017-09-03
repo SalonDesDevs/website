@@ -37,13 +37,13 @@ p {
 
 @keyframes loading {
     from {
-        opacity: 1;
-    }
-    50% {
         opacity: 0;
     }
-    to {
+    50% {
         opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }
 </style>

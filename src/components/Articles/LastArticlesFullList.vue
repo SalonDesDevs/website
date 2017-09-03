@@ -1,21 +1,18 @@
 <template>
     <section id="last-articles">
         <div class="articles-container">
-            <article-tile v-for="article in articles" v-bind="article" :key="article.title"></article-tile>
+            <article-tile v-for="article in parsedArticles" v-bind="article" :key="article.title"></article-tile>
         </div>
         <button v-on:click="more">Voir plus</button>
     </section>
 </template>
 
 <script>
-import articles from '../../articles.json';
 import ArticleTile from './ArticleTile.vue';
 
 export default {
     name: 'last-articles-full-list',
-    data () {
-        return {articles: articles.slice(1, 5)};
-    },
+    props: ['articles'],
     methods: {
         more: function() {
             console.log('more');
@@ -23,6 +20,11 @@ export default {
     },
     components: {
         ArticleTile
+    },
+    computed: {
+        parsedArticles: function() {
+            return JSON.parse(this.articles);
+        }
     }
 };
 </script>

@@ -4,15 +4,17 @@
         <navigation></navigation>
         <div class="header-content">
             <div class="big-preview-container">
-                <router-link :to="uri">
-                    <img :src="picture" :alt="title" />
+                <router-link :to="article.uri">
+                    <img :src="article.picture" :alt="article.title" />
                 </router-link>
             </div>
             <div class="article-title-container">
-                <router-link :to="uri">
+                <router-link :to="article.uri">
                     <p class="last-article">Dernier article</p>
-                    <p class="last-article-title">{{ title }}</p>
-                    <p class="last-article-author">{{ author + ' - ' + date }}</p>
+                    <p class="last-article-title">{{ article.title }}</p>
+                    <p class="last-article-author">
+                        {{ article.author + ' - ' + new Date(article.date).toISOString().substr(0,10) }}
+                    </p>
                 </router-link>
             </div>
         </div>
@@ -26,7 +28,6 @@
 import Particle from '../Particle.vue';
 import Navigation from '../Navigation/Navigation.vue';
 import Separator from '../Homepage/Separator.vue';
-import articles from '../../../articles.json';
 
 export default {
     name: 'articles-header',
@@ -35,8 +36,16 @@ export default {
         Navigation,
         Separator
     },
-    data () {
-        return articles[0];
+    props: ['firstArticle'],
+    computed: {
+        article: function() {
+            if(this.firstArticle) return JSON.parse(this.firstArticle);
+            return {
+                title: '',
+                date: new Date().toString(),
+                uri: '/',
+            };
+        }
     }
 };
 </script>
@@ -122,6 +131,7 @@ p.last-article-author {
 
 img {
     width: 600px;
+    height: 345px;
     display: block;
     float: right;
     margin-right: 40px;

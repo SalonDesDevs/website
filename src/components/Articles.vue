@@ -1,9 +1,11 @@
 <template>
     <div id="articles">
-        <articles-header></articles-header>
-        <loader></loader>
-        <last-articles-full-list></last-articles-full-list>
+        <articles-header :first-article="firstArticleString"></articles-header>
+        <last-articles-full-list :articles="postsString"></last-articles-full-list>
         <footer-section></footer-section>
+        <transition name="fadeload">
+            <loader v-if="loading"></loader>
+        </transition>
     </div>
 </template>
 
@@ -21,6 +23,28 @@ export default {
         LastArticlesFullList,
         Loader
     },
+    data () {
+        return {
+            loading: true,
+            posts: []
+        };
+    },
+    mounted() {
+        fetch('https://salondesdevs.io/api/posts/list')
+            .then(data => data.json())
+            .then(posts => {
+                this.loading = false;
+                this.posts = posts;
+            }).catch(console.log);
+    },
+    computed: {
+        firstArticleString: function () {
+            return JSON.stringify(this.posts[0]);
+        },
+        postsString: function() {
+            return JSON.stringify(this.posts.slice(1));
+        }
+    },
     head: {
         title: {
             inner: 'Derniers Articles - Salon des développeurs'
@@ -37,5 +61,15 @@ export default {
 </script>
 
 <style>
+.fadeload-leave {
+    opacity: 1;
+}
 
+.fadeload-leave-active {
+    transition: opacity .5s;
+}
+
+.fadeload-leave-to {
+    opacity: 0;
+}
 </style>
