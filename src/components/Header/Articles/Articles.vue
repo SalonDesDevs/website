@@ -80,9 +80,9 @@ div.header-content {
     div.article-title-container {
         min-width: 550px !important;
     }
-    div.big-preview-container > img {
+    div.big-preview-container > a > img {
         float: unset !important;
-        margin: 0 auto;
+        margin: 0 auto !important;
     }
     img {
         max-width: calc(100% - 20px);
