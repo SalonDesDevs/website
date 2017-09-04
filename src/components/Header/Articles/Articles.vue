@@ -36,10 +36,9 @@ export default {
         Navigation,
         Separator
     },
-    props: ['firstArticle'],
     computed: {
         article: function() {
-            if(this.firstArticle) return JSON.parse(this.firstArticle);
+            if(this.$root.$store.state.postList.length) return this.$root.$store.state.postList[0];
             return {
                 title: '',
                 date: new Date().toString(),
@@ -86,6 +85,7 @@ div.header-content {
     }
     img {
         max-width: calc(100% - 20px);
+        height: auto !important;
     }
 }
 
@@ -136,7 +136,7 @@ img {
     float: right;
     margin-right: 40px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px 0 rgba(40, 40, 40, 0.5);
+    box-shadow: 0 2px 5px 0 rgba(40, 40, 40, 0.5);
 }
 
 div.separator-container {
@@ -162,5 +162,6 @@ div.big-preview-container > a > img {
 
 div.big-preview-container > a > img:hover {
     transform: scale(1.01);
+    box-shadow: 0 2px 10px 0 rgba(40, 40, 40, 0.5);
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div id="articles">
-        <articles-header :first-article="firstArticleString"></articles-header>
-        <last-articles-full-list :articles="postsString"></last-articles-full-list>
+        <articles-header></articles-header>
+        <last-articles-full-list></last-articles-full-list>
         <footer-section></footer-section>
         <transition name="fadeload">
             <loader v-if="loading"></loader>
@@ -10,6 +10,7 @@
 </template>
 
 <script>
+/*globals store: true */
 import ArticlesHeader from './Header/Articles/Articles.vue';
 import FooterSection from './Footer/FooterSection.vue';
 import LastArticlesFullList from './Articles/LastArticlesFullList.vue';
@@ -23,21 +24,17 @@ export default {
         LastArticlesFullList,
         Loader
     },
-    data () {
-        return {
-            loading: true,
-            posts: []
-        };
-    },
     mounted() {
         fetch('https://salondesdevs.io/api/posts/list')
             .then(data => data.json())
             .then(posts => {
-                this.loading = false;
-                this.posts = posts;
+                this.$root.$store.commit('setPostList', {postList: posts});
             }).catch(console.log);
     },
     computed: {
+        loading: function() {
+            return this.$root.$store.state.postList.length === 0;
+        },
         firstArticleString: function () {
             return JSON.stringify(this.posts[0]);
         },

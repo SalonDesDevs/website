@@ -58,4 +58,12 @@ div {
     text-align: left;
     margin: auto 50px 30px;
 }
+
+@media (max-width: 600px) {
+    div {
+        margin: auto !important;
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    }
+}
 </style>
