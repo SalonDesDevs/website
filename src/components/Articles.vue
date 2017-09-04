@@ -25,11 +25,12 @@ export default {
         Loader
     },
     mounted() {
-        fetch('https://salondesdevs.io/api/posts/list')
-            .then(data => data.json())
-            .then(posts => {
-                this.$root.$store.commit('setPostList', {postList: posts});
-            }).catch(console.log);
+        if(!this.$root.$store.state.postList.length)
+            fetch('https://salondesdevs.io/api/posts/list')
+                .then(data => data.json())
+                .then(posts => {
+                    this.$root.$store.commit('setPostList', {postList: posts});
+                }).catch(console.log);
     },
     computed: {
         loading: function() {
