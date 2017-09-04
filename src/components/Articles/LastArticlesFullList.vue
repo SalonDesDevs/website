@@ -1,7 +1,7 @@
 <template>
     <section id="last-articles">
         <div class="articles-container">
-            <article-tile v-for="article in articles" v-bind="article" :key="article.title"></article-tile>
+            <article-tile v-for="article in articles" :id="article.id" :key="article.id"></article-tile>
         </div>
         <button v-on:click="more">Voir plus</button>
     </section>

@@ -1,17 +1,25 @@
 <template>
     <div>
         <a :href="url">
-            <img :src="picture" />
-            <h3> {{ title }}</h3>
+            <img :src="article.picture" />
+            <h3> {{ article.title }}</h3>
         </a>
-        <p> {{ author }} {{ date }} </p>
+        <p> {{ article.author }} - {{ date }} </p>
     </div>
 </template>
 
 <script>
 export default {
     name: 'last-articles',
-    props: ['title', 'url', 'author', 'date', 'picture'],
+    props: ['id'],
+    computed: {
+        article: function() {
+            return this.$root.$store.state.postList.filter(post => post.id === this.id)[0];
+        },
+        date: function() {
+            return new Date(this.article.date).toISOString().substring(0, 10);
+        }
+    }
 };
 </script>
 
