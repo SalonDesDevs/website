@@ -42,31 +42,36 @@ h1#heading {
     text-align: center;
 }
 
-td.gutter {
+#content td.gutter {
     display: none;
 }
 
-td.code {
+#content td.code {
     padding: 0px;
     overflow-x: auto;
 }
 
-p {
+#content p {
     text-align: justify;
 }
 
-pre *, code {
+#content pre *,
+#content code {
     font-family: 'Source Code Pro', monospace;
     font-weight: 500;
     background-color: #f0f0f0;
 }
 
-figure, table, tbody, tr, td.code {
+#content figure,
+#content table,
+#content tbody,
+#content tr,
+#content td.code {
     display: block;
     width: 100%;
 }
 
-figure {
+#content figure {
     margin: 10px 0;
     padding-left: 10px;
     padding-right: 10px;
@@ -74,94 +79,95 @@ figure {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
 }
 
-a, a:visited {
+#content a,
+#content a:visited {
     color: #2a2a2a;
 }
 
 /* Imported from https://github.com/isagalaev/highlight.js/blob/master/src/styles/github.css */
-.comment,
-.quote {
+#content .comment,
+#content .quote {
   color: #998;
   font-style: italic;
 }
 
-.keyword,
-.selector-tag,
-.subst {
+#content .keyword,
+#content .selector-tag,
+#content .subst {
   color: #333;
   font-weight: bold;
 }
 
-.number,
-.literal,
-.variable,
-.template-variable,
-.tag .attr {
+#content .number,
+#content .literal,
+#content .variable,
+#content .template-variable,
+#content .tag .attr {
   color: #008080;
 }
 
-.string,
-.doctag {
+#content .string,
+#content .doctag {
   color: #d14;
 }
 
-.title,
-.section,
-.selector-id {
+#content .title,
+#content .section,
+#content .selector-id {
   color: #900;
   font-weight: bold;
 }
 
-.subst {
+#content .subst {
   font-weight: normal;
 }
 
-.type,
-.class .title {
+#content .type,
+#content .class .title {
   color: #458;
   font-weight: bold;
 }
 
-.tag,
-.name,
-.attribute {
+#content .tag,
+#content .name,
+#content .attribute {
   color: #000080;
   font-weight: normal;
 }
 
-.regexp,
-.link {
+#content .regexp,
+#content .link {
   color: #009926;
 }
 
-.symbol,
-.bullet {
+#content .symbol,
+#content .bullet {
   color: #990073;
 }
 
-.built_in,
-.builtin-name {
+#content .built_in,
+#content .builtin-name {
   color: #0086b3;
 }
 
-.meta {
+#content .meta {
   color: #999;
   font-weight: bold;
 }
 
-.deletion {
+#content .deletion {
   background: #fdd;
 }
 
-.addition {
+#content .addition {
   background: #dfd;
 }
 
-.emphasis {
+#content .emphasis {
   font-style: italic;
 }
 
-.strong {
+#content .strong {
   font-weight: bold;
 }
 </style>
