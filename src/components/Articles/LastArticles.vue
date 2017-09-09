@@ -33,10 +33,10 @@ export default {
     },
     computed: {
         loading: function() {
-            return this.$root.$store.state.postList.length === 0;
+            return this.$store.getters.isPostListEmpty;
         },
         articles: function() {
-            return this.$root.$store.state.postList.slice(0,2);
+            return this.$store.state.postList.slice(0,2);
         }
     }
 };

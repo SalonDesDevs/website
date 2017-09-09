@@ -10,6 +10,7 @@ Vue.use(Vuex);
 import App from './App.vue';
 import Homepage from './components/Homepage.vue';
 import Articles from './components/Articles.vue';
+import Article from './components/Article.vue';
 
 const routes = [
     {
@@ -19,6 +20,10 @@ const routes = [
     {
         path: '/articles',
         component: Articles
+    },
+    {
+        path: '/article/:id/:title',
+        component: Article
     },
     {
         path: '*',
@@ -36,11 +41,39 @@ const router = new VueRouter({
 });
 const store = new Vuex.Store({
     state: {
-        postList: []
+        postList: [],
+        postContent: {}
     },
     mutations: {
         setPostList(state, {postList}) {
             state.postList = postList;
+        },
+        setPostContent(state, {key_id, post}) {
+            Vue.set(state.postContent, key_id, post);
+        }
+    },
+    getters: {
+        isPostListEmpty(state) {
+            return !state.postList.length;
+        },
+        hasContentBeenFetched: (state) => (id) => (state.postContent[id] !== undefined)
+    },
+    actions: {
+        fetchArticle ({commit}, {id, title}) {
+            fetch('https://salondesdevs.io/api/post/content/by-uri/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id_suffix: id,
+                    sanitized_title: title
+                })
+            })
+                .then(data => data.json())
+                .then(post => {
+                    commit('setPostContent', {key_id: id, post});
+                }).catch(console.trace);
         }
     }
 });

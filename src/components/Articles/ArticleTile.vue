@@ -1,9 +1,9 @@
 <template>
     <div>
-        <a :href="url">
+        <router-link :to="article.uri">
             <img :src="article.picture" />
             <h3> {{ article.title }}</h3>
-        </a>
+        </router-link>
         <p> {{ article.author }} - {{ date }} </p>
     </div>
 </template>
@@ -14,7 +14,7 @@ export default {
     props: ['id'],
     computed: {
         article: function() {
-            return this.$root.$store.state.postList.filter(post => post.id === this.id)[0];
+            return this.$store.state.postList.filter(post => post.id === this.id)[0];
         },
         date: function() {
             return new Date(this.article.date).toISOString().substring(0, 10);
