@@ -1,7 +1,7 @@
 <template>
     <div id="articles">
-        <articles-header></articles-header>
-        <last-articles-full-list></last-articles-full-list>
+        <articles-header v-if="!loading"></articles-header>
+        <last-articles-full-list v-if="!loading"></last-articles-full-list>
         <footer-section></footer-section>
         <transition name="fadeload">
             <loader v-if="loading"></loader>

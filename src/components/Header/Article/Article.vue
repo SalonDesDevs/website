@@ -52,7 +52,7 @@ export default {
         },
         gradient: function() {
             return {
-                background: 'radial-gradient(100% 400px at bottom, ' + this.gradientColor + ' -100%, transparent 90%)',
+                background: 'radial-gradient(100% 400px at bottom, ' + this.gradientColor + ' -200%, transparent 95%)',
             };
         },
         date: function() {

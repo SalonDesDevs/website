@@ -5,7 +5,11 @@
         <div class="header-content">
             <div class="big-preview-container">
                 <router-link :to="article.uri">
-                    <img :src="article.picture" :alt="article.title" />
+                    <div class="article-img" >
+                        <div class="shade" :style="shadeStyle"></div>
+                        <img class="bg" src="../../../img/article-bg.png" />
+                        <img ref="logo" class="logo" :src="logoSrc" :alt="article.tags[0]">
+                    </div>
                 </router-link>
             </div>
             <div class="article-title-container">
@@ -28,6 +32,7 @@
 import Particle from '../Particle.vue';
 import Navigation from '../Navigation/Navigation.vue';
 import Separator from '../Homepage/Separator.vue';
+import * as Vibrant from 'node-vibrant';
 
 export default {
     name: 'articles-header',
@@ -36,13 +41,30 @@ export default {
         Navigation,
         Separator
     },
+    data() {
+        return {
+            logoColour: '#fff',
+        };
+    },
+    mounted() {
+        this.$refs.logo.addEventListener('load', () => {
+            const vibrant = new Vibrant(this.$refs.logo.getAttribute('src'));
+            vibrant.getPalette((err, palette) => {
+                if(err) return console.log(err);
+                this.logoColour = palette.Vibrant.getHex();
+            });
+        });
+    },
     computed: {
         article: function() {
-            if(!this.$root.$store.getters.isPostListEmpty) return this.$root.$store.state.postList[0];
+            return this.$root.$store.state.postList[0];
+        },
+        logoSrc: function() {
+            return 'https://salondesdevs.io/api/icon/by-language/' + this.article.tags[0];
+        },
+        shadeStyle: function() {
             return {
-                title: '',
-                date: new Date().toString(),
-                uri: '/',
+                background: 'linear-gradient(to bottom, transparent 40%, ' + this.logoColour + ' 500%)'
             };
         }
     }
@@ -79,12 +101,14 @@ div.header-content {
     div.article-title-container {
         min-width: 550px !important;
     }
-    div.big-preview-container > a > img {
+    div.big-preview-container > a > div.article-img {
         float: unset !important;
         margin: 0 auto !important;
+        width: 100%;
+        height: auto;
     }
-    img {
-        max-width: calc(100% - 20px);
+    div.big-preview-container {
+        max-width: calc(100% - 20px) !important;
         height: auto !important;
     }
 }
@@ -129,7 +153,7 @@ p.last-article-author {
     text-transform: uppercase;
 }
 
-img {
+div.article-img {
     width: 600px;
     height: 345px;
     display: block;
@@ -137,6 +161,7 @@ img {
     margin-right: 40px;
     border-radius: 8px;
     box-shadow: 0 2px 5px 0 rgba(40, 40, 40, 0.5);
+    position: relative;
 }
 
 div.separator-container {
@@ -156,12 +181,37 @@ a {
     height: fit-content;
 }
 
-div.big-preview-container > a > img {
+div.big-preview-container > a > div.article-img {
     transition: all .1s ease-in-out;
 }
 
-div.big-preview-container > a > img:hover {
+div.big-preview-container > a > div.article-img:hover {
     transform: scale(1.01);
     box-shadow: 0 2px 10px 0 rgba(40, 40, 40, 0.5);
+}
+
+img.bg {
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .1s ease-in-out;
+}
+
+img.logo {
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    right: 10px;
+    height: calc(100% - 20px);
+    transition: all .1s ease-in-out;
+}
+
+div.shade {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
 }
 </style>
