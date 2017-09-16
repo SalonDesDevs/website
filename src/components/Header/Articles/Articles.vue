@@ -38,7 +38,7 @@ export default {
     },
     computed: {
         article: function() {
-            if(this.$root.$store.state.postList.length) return this.$root.$store.state.postList[0];
+            if(!this.$root.$store.getters.isPostListEmpty) return this.$root.$store.state.postList[0];
             return {
                 title: '',
                 date: new Date().toString(),

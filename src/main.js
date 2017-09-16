@@ -74,6 +74,13 @@ const store = new Vuex.Store({
                 .then(post => {
                     commit('setPostContent', {key_id: id, post});
                 }).catch(console.trace);
+        },
+        fetchArticles ({commit}) {
+            fetch('https://salondesdevs.io/api/posts/list')
+                .then(data => data.json())
+                .then(posts => {
+                    commit('setPostList', {postList: posts});
+                }).catch(console.log);
         }
     }
 });

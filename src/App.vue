@@ -34,4 +34,9 @@ body {
 .fade-enter, .fade-leave-active {
   opacity: 0
 }
+
+/* Fix for vibrant creating canvas at the bottom of the page */
+canvas.vibrant-canvas {
+    display: none;
+}
 </style>

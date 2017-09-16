@@ -1,6 +1,6 @@
 <template>
     <section class="content">
-        <h1 id="heading">{{article.title}}</h1>
+        <!-- <h1 id="heading">{{article.title}}</h1> -->
         <div v-html="article.content" id="content">
         </div>
     </section>
