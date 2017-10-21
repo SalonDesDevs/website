@@ -3,7 +3,7 @@
         <div class="articles-container">
             <article-tile v-for="article in articles" :id="article.id" :key="article.id"></article-tile>
         </div>
-        <button v-on:click="more">Voir plus</button>
+        <!-- <button v-on:click="more">Voir plus</button> -->
     </section>
 </template>
 
