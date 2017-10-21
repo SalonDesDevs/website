@@ -93,7 +93,6 @@ h3, p {
 h3 {
     margin-top: 10px;
     font-size: 18px;
-    text-transform: capitalize;
 }
 
 a {
