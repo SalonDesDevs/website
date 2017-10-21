@@ -48,7 +48,7 @@ export default {
     },
     computed: {
         logoSrc: function() {
-            return 'https://salondesdevs.io/api/icon/by-language/' + this.article.tags[0];
+            return 'https://salondesdevs.io/api/icon/by-language/' + (this.article.tags[0] || 'devicon');
         },
         gradient: function() {
             return {
@@ -126,6 +126,7 @@ h1 {
     margin-top: 5px;
     font-weight: 800;
     text-transform: uppercase;
+    max-width: 550px;
 }
 
 h2 {

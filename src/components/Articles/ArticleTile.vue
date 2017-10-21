@@ -30,7 +30,7 @@ export default {
             return new Date(this.article.date).toISOString().substring(0, 10);
         },
         logoSrc: function() {
-            return 'https://salondesdevs.io/api/icon/by-language/' + this.article.tags[0];
+            return 'https://salondesdevs.io/api/icon/by-language/' + (this.article.tags[0] || 'devicon');
         },
         shadeStyle: function() {
             return {
