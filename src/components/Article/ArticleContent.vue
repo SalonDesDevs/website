@@ -29,6 +29,7 @@ div#content {
     margin: 0 auto;
     padding: 10px 35px;
     max-width: 800px;
+    padding-bottom: 50px;
 }
 
 h1#heading {
@@ -41,6 +42,7 @@ h1#heading {
     font-size: 40px;
     text-align: center;
 }
+
 
 #content td.gutter {
     display: none;
@@ -82,6 +84,13 @@ h1#heading {
 #content a,
 #content a:visited {
     color: #2a2a2a;
+}
+
+#content blockquote {
+    background-color: rgba(0, 0, 0, .1);
+    margin: 0px;
+    padding: 5px 35px;
+    border-left: 5px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Imported from https://github.com/isagalaev/highlight.js/blob/master/src/styles/github.css */
