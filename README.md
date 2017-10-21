@@ -1,16 +1,32 @@
-# sdd-website
+Site web du SDD
+===============
 
-> SDD's website
+<p align="center">
+  <a href="https://salondesdevs.io/"><img src="./sdd-white.png" width="400px" /></a>
+</p>
 
-## Build Setup
 
-``` bash
-# install dependencies
+<p align="center">
+  Fabriqué avec <br>
+  <img src="https://cdn.rawgit.com/hexojs/logo/master/hexo-logo-avatar.png" width="25%"/>
+  <img src="https://cdn.rawgit.com/vuejs/art/master/logo.png" width="25%"/>
+</p>
+
+### Setup
+
+```bash
 npm install
+```
 
-# serve with hot reload at localhost:8080
+### Dev server
+
+```bash
 npm run dev
+```
 
-# build for production with minification
+### Production build
+
+```bash
+# Set NODE_ENV=production if necessary
 npm run build
 ```
