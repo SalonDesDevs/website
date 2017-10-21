@@ -7,14 +7,14 @@
                     <defs>
                         <filter id="a" color-interpolation-filters="sRGB">
                             <feGaussianBlur result="result6" stdDeviation=".5"/>
-                            <feComposite in2="result6" operator="atop" in="SourceGraphic" 
+                            <feComposite in2="result6" operator="atop" in="SourceGraphic"
                                 result="result8"/>
-                            <feComposite in2="SourceAlpha" in="result8" operator="atop" 
+                            <feComposite in2="SourceAlpha" in="result8" operator="atop"
                                 result="result9"/>
                         </filter>
                         <filter id="b" color-interpolation-filters="sRGB">
                             <feFlood flood-opacity=".4" flood-color="#000" result="flood"/>
-                            <feComposite in2="SourceGraphic" in="flood" operator="in" 
+                            <feComposite in2="SourceGraphic" in="flood" operator="in"
                                 result="composite1"/>
                             <feGaussianBlur in="composite" stdDeviation=".5" result="blur"/>
                             <feOffset dy=".714" result="offset"/>
@@ -25,14 +25,14 @@
                         </clipPath>
                     </defs>
                     <g transform="translate(0 -803.4)">
-                        <path fill="#e6e6e6" stroke="#999" stroke-width="3.562" 
-                            d="M1.781 891.924v95.382" stroke-linecap="round" 
+                        <path fill="#e6e6e6" stroke="#999" stroke-width="3.562"
+                            d="M1.781 891.924v95.382" stroke-linecap="round"
                             stroke-linejoin="round"/>
-                        <path fill="#e6e6e6" stroke="#999" stroke-width="3.061" 
-                            d="M358.67 942.247v45.311" stroke-linecap="round" 
+                        <path fill="#e6e6e6" stroke="#999" stroke-width="3.061"
+                            d="M358.67 942.247v45.311" stroke-linecap="round"
                             stroke-linejoin="round"/>
-                        <rect width="353.750" height="696.607" x="3.124" y="805.07" 
-                            fill="#2a2a2a" stroke="#3a3a3a" stroke-width="3.392" ry="48.571" 
+                        <rect width="353.750" height="696.607" x="3.124" y="805.07"
+                            fill="#2a2a2a" stroke="#3a3a3a" stroke-width="3.392" ry="48.571"
                             stroke-linecap="round" stroke-linejoin="round"/>
                         <image width="339.5" height="599.5" x="10.25" y="853.63"
                             stroke-width="0" clip-path="url(#clip-rounded-corners-screen)"
@@ -40,12 +40,12 @@
                         <rect width="85.71" height="21.42" x="137.14" y="1466.001" fill="#3a3a3a"
                             rx="8.571" ry="7.857" filter="url(#b)"/>
                         <g transform="translate(1.42857143)">
-                            <rect width="85.71" height="5.714" x="135.714" y="819.088" fill="#3a3a3a" 
+                            <rect width="85.71" height="5.714" x="135.714" y="819.088" fill="#3a3a3a"
                                 ry="5" rx="3"/>
                             <g transform="matrix(2.142 0 0 2.142 242.857 -1425)" filter="url(#a)">
-                                <path fill="#333" 
+                                <path fill="#333"
                                     d="M6 1049.362c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3z"/>
-                                <path 
+                                <path
                                     fill="#1a1a1a" d="M4 1049.362c0 .553-.448 1-1 1s-1-.447-1-1c0-.552.448-1 1-1s1 .448 1 1z"
                                     opacity=".66"/>
                             </g>
@@ -113,7 +113,7 @@ export default {
             .catch(err => console.log(err));
         updateOnline();
         setInterval(updateOnline, 6e4);
-        const updateScale = () => { 
+        const updateScale = () => {
             this.svgScaleFactor = Math.min(1, (document.documentElement.clientWidth - 20) / 360);
         };
         window.addEventListener('resize', updateScale);
@@ -143,7 +143,7 @@ export default {
         },
         dev: function() {
             return this.members.filter(
-                member => 
+                member =>
                     this.sysadmin.filter(
                         m => m.username === member.username
                     ).length === 0 &&
@@ -152,18 +152,19 @@ export default {
                     ).length === 0 &&
                     !(member.nick && member.nick.startsWith('[C]'))
             ).map(
-                user => {
-                    user.nick = user.nick || user.username;
-                    user.lnick = user.nick.toLowerCase();
-                    user.isAdmin = user.username === 'DeltaEvo' ||
+                user => Object.assign(user, {
+                    nick: user.nick || user.username,
+                    lnick: user.nick.toLowerCase(),
+                    isAdmin: user.username === 'DeltaEvo' ||
                         user.username === 'Litarvan' ||
                         user.username === 'FliiFe' ||
+                        user.username === 'Théophile' ||
                         user.username === 'Loïc' ||
                         user.username === 'Vavaballz' ||
-                        user.username === '(Psy) Pierre.G' || 
-                        user.username === 'MinusKube';
-                    return user;
-                }
+                        user.username === 'Valentin' ||
+                        user.username === '(Psy) Pierre.G' ||
+                        user.username === 'MinusKube'
+                })
             ).sort(
                 (a, b) => (a.lnick < b.lnick) ? -1 : (a.lnick > b.lnick) ? 1 : 0
             );
