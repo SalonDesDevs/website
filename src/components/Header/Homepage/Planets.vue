@@ -26,6 +26,7 @@ export default {
     data () {
         return {
             "moveInitialized": false,
+            "timers": [],
             "speed": 0.10,
             "planets": [{
                     "id": "3",
@@ -137,6 +138,11 @@ export default {
     mounted () {
         this.$nextTick(() => this.initMove());
     },
+    beforeDestroy() {
+        this.timers.forEach((id) => {
+            clearInterval(id);
+        });
+    },
     methods: {
         initMove() {
             // Make sure to run this only once.
@@ -154,10 +160,10 @@ export default {
                 // Time interval at which the direction is reversed.
                 planet.lifetime = Math.floor(Math.random() * 5000) + 5000;
                 // Prevent excessive moving around. Planets end up overlapping, wich is kinda ugly
-                setInterval(() => {
+                this.timers.push(setInterval(() => {
                     planet.moveX *= -1;
                     planet.moveY *= -1;
-                }, planet.lifetime);
+                }, planet.lifetime));
             });
             const loop = (frameTime) => {
                 window.requestAnimationFrame(loop);
