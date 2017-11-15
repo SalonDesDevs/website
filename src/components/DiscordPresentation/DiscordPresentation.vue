@@ -154,7 +154,7 @@ export default {
             ).map(
                 user => Object.assign(user, {
                     nick: user.nick || user.username,
-                    lnick: user.nick.toLowerCase(),
+                    lnick: (user.nick || user.username).toLowerCase(),
                     isAdmin: user.username === 'DeltaEvo' ||
                         user.username === 'Litarvan' ||
                         user.username === 'FliiFe' ||

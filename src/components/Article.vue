@@ -2,6 +2,7 @@
     <div id="articles">
         <article-header v-if="!loading" :article-id="id"></article-header>
         <article-content v-if="!loading" :article-id="id"></article-content>
+        <author-section></author-section>
         <footer-section></footer-section>
         <transition name="fadeload">
             <loader v-if="loading"></loader>
@@ -12,6 +13,7 @@
 <script>
 import ArticleHeader from './Header/Article/Article.vue';
 import ArticleContent from './Article/ArticleContent.vue';
+import AuthorSection from './Article/AuthorSection.vue';
 import FooterSection from './Footer/FooterSection.vue';
 import Loader from './Loader/Loader.vue';
 
@@ -21,6 +23,7 @@ export default {
         ArticleHeader,
         FooterSection,
         ArticleContent,
+        AuthorSection,
         Loader
     },
     data() {
