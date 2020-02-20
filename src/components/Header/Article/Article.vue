@@ -47,9 +47,6 @@ export default {
         };
     },
     computed: {
-        logoSrc: function() {
-            return 'https://salondesdevs.io/api/icon/by-language/' + (this.article.tags[0] || 'devicon');
-        },
         gradient: function() {
             return {
                 background: 'radial-gradient(100% 400px at bottom, ' + this.gradientColor + ' -200%, transparent 95%)',

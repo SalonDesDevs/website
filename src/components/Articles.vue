@@ -25,12 +25,9 @@ export default {
         Loader
     },
     mounted() {
+        console.log(this.$root.$store);
         if(!this.$root.$store.state.postList.length)
-            fetch('https://salondesdevs.io/api/posts/list')
-                .then(data => data.json())
-                .then(posts => {
-                    this.$root.$store.commit('setPostList', {postList: posts});
-                }).catch(console.log);
+            this.$root.$store.dispatch('fetchArticles')
     },
     computed: {
         loading: function() {
