@@ -1,6 +1,6 @@
 <template>
     <div class="tile">
-        <router-link :to="article.uri">
+        <router-link :to="{name: 'article', params: article }">
             <div class="article-img" >
                 <div class="shade" :style="shadeStyle"></div>
                 <img class="bg" :src="article.bgImage" />

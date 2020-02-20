@@ -20,7 +20,8 @@ const routes = [
         component: () => import('./components/Articles.vue')
     },
     {
-        path: '/article/:id/:title',
+        name: 'article',
+        path: '/article/:uri',
         component: () => import('./components/Article.vue')
     },
     {
@@ -47,6 +48,7 @@ const store = new Vuex.Store({
             state.postList = postList;
         },
         setPostContent(state, {key_id, post}) {
+            console.log('set post content', key_id, post);
             Vue.set(state.postContent, key_id, post);
         }
     },
@@ -57,24 +59,15 @@ const store = new Vuex.Store({
         hasContentBeenFetched: (state) => (id) => (state.postContent[id] !== undefined)
     },
     actions: {
-        fetchArticle ({commit}, {id, title}) {
-            fetch('https://salondesdevs.io/api/post/content/by-uri/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    id_suffix: id,
-                    sanitized_title: title
-                })
-            })
-                .then(data => data.json())
-                .then(post => {
-                    commit('setPostContent', {key_id: id, post});
-                }).catch(console.trace);
+        fetchArticle ({commit}, {uri}) {
+            return import('../articles')
+                .then(({ findByUri }) => findByUri(uri))
+                .then((article) => {
+                    commit('setPostContent', {key_id: uri, post: article});
+                });
         },
         fetchArticles ({commit}) {
-            import('../articles').then(({ articles }) => {
+            return import('../articles').then(({ articles }) => {
                 const sorted = articles.sort((a, b) => a.updateDate - b.updateDate);
 
                 commit('setPostList', {postList: sorted});
