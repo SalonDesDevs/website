@@ -4,7 +4,7 @@
         <navigation></navigation>
         <div class="header-content">
             <div class="big-preview-container">
-                <router-link :to="article.uri">
+                <router-link :to="{name: 'article', params: article}">
                     <div class="article-img" >
                         <div class="shade" :style="shadeStyle"></div>
                         <img class="bg" :src="article.bgImage" />
@@ -12,7 +12,7 @@
                 </router-link>
             </div>
             <div class="article-title-container">
-                <router-link :to="article.uri">
+                <router-link :to="{name: 'article', params: article}">
                     <p class="last-article">Dernier article</p>
                     <p class="last-article-title">{{ article.title }}</p>
                     <p class="last-article-author">

@@ -77,7 +77,7 @@ div.header-content {
     color: #fafafa;
 }
 
-/* @media (max-width: 1140px) { */
+@media (max-width: 1140px) {
     div.header-content {
         flex-direction: column-reverse !important;
     }
@@ -89,7 +89,7 @@ div.header-content {
     h1, h2 {
         text-align: center;
     }
-/* } */
+}
 
 @media (max-width: 500px) {
     .logo-container > img {
