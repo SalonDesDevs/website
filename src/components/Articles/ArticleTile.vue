@@ -3,12 +3,11 @@
         <router-link :to="article.uri">
             <div class="article-img" >
                 <div class="shade" :style="shadeStyle"></div>
-                <img class="bg" src="../../img/article-bg.png" />
-                <img ref="logo" class="logo" :src="logoSrc" :alt="article.tags[0]">
+                <img class="bg" :src="article.bgImage" />
             </div>
             <h3> {{ article.title }}</h3>
         </router-link>
-        <p> {{ article.author }} - {{ date }} </p>
+        <p> {{ author }} - {{ date }} </p>
     </div>
 </template>
 
@@ -23,14 +22,20 @@ export default {
         };
     },
     computed: {
+        author() {
+            const { authors } = this.article;
+            const [first] = authors;
+
+            return (authors.length == 1)
+                ? first
+                : `${first} (+${authors.length - 1})`;
+        },
+
         article: function() {
             return this.$store.state.postList.filter(post => post.id === this.id)[0];
         },
         date: function() {
-            return new Date(this.article.date).toISOString().substring(0, 10);
-        },
-        logoSrc: function() {
-            return 'https://salondesdevs.io/api/icon/by-language/' + (this.article.tags[0] || 'devicon');
+            return this.article.updateDate.toISOString().substring(0, 10);
         },
         shadeStyle: function() {
             return {
@@ -39,13 +44,13 @@ export default {
         }
     },
     mounted() {
-        this.$refs.logo.addEventListener('load', () => {
-            const vibrant = new Vibrant(this.$refs.logo.getAttribute('src'));
-            vibrant.getPalette((err, palette) => {
-                if(err) return console.log(err);
-                this.logoColour = palette.Vibrant.getHex();
-            });
-        });
+        // this.$refs.logo.addEventListener('load', () => {
+        //     const vibrant = new Vibrant(this.$refs.logo.getAttribute('src'));
+        //     vibrant.getPalette((err, palette) => {
+        //         if(err) return console.log(err);
+        //         this.logoColour = palette.Vibrant.getHex();
+        //     });
+        // });
     }
 };
 </script>

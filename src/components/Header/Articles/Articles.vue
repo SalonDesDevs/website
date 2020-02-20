@@ -7,8 +7,7 @@
                 <router-link :to="article.uri">
                     <div class="article-img" >
                         <div class="shade" :style="shadeStyle"></div>
-                        <img class="bg" src="../../../img/article-bg.png" />
-                        <img ref="logo" class="logo" :src="logoSrc" :alt="article.tags[0]">
+                        <img class="bg" :src="article.bgImage" />
                     </div>
                 </router-link>
             </div>
@@ -17,7 +16,7 @@
                     <p class="last-article">Dernier article</p>
                     <p class="last-article-title">{{ article.title }}</p>
                     <p class="last-article-author">
-                        {{ article.author + ' - ' + new Date(article.date).toISOString().substr(0,10) }}
+                        {{ article.authors[0] }}
                     </p>
                 </router-link>
             </div>
@@ -47,20 +46,17 @@ export default {
         };
     },
     mounted() {
-        this.$refs.logo.addEventListener('load', () => {
-            const vibrant = new Vibrant(this.$refs.logo.getAttribute('src'));
-            vibrant.getPalette((err, palette) => {
-                if(err) return console.log(err);
-                this.logoColour = palette.Vibrant.getHex();
-            });
-        });
+        //this.$refs.logo.addEventListener('load', () => {
+        //    const vibrant = new Vibrant(this.$refs.logo.getAttribute('src'));
+        //    vibrant.getPalette((err, palette) => {
+        //        if(err) return console.log(err);
+        //        this.logoColour = palette.Vibrant.getHex();
+        //    });
+        //});
     },
     computed: {
         article: function() {
             return this.$root.$store.state.postList[0];
-        },
-        logoSrc: function() {
-            return 'https://salondesdevs.io/api/icon/by-language/' + this.article.tags[0];
         },
         shadeStyle: function() {
             return {

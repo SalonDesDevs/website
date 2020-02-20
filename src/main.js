@@ -74,11 +74,11 @@ const store = new Vuex.Store({
                 }).catch(console.trace);
         },
         fetchArticles ({commit}) {
-            fetch('https://salondesdevs.io/api/posts/list')
-                .then(data => data.json())
-                .then(posts => {
-                    commit('setPostList', {postList: posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())});
-                }).catch(console.log);
+            import('../articles').then(({ articles }) => {
+                const sorted = articles.sort((a, b) => a.updateDate - b.updateDate);
+
+                commit('setPostList', {postList: sorted});
+            });
         }
     }
 });
