@@ -11,7 +11,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, './dist'),
-        publicPath: '/dist/',
+        publicPath: '/',
         filename: '[name].js'
     },
     module: {
@@ -58,7 +58,11 @@ module.exports = {
         hints: false
     },
     plugins: [
-        new (require("vue-loader/lib/plugin"))
+        new (require("vue-loader/lib/plugin")),
+        new (require("html-webpack-plugin"))({
+            template: 'public/index.html',
+            chunks: ['main']
+        })
     ],
     devtool: '#eval-source-map'
 };
