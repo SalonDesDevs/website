@@ -11,6 +11,11 @@ module.exports = {
         publicPath: '/dist/',
         filename: 'build.js'
     },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
     module: {
         rules: [
             {
@@ -29,7 +34,8 @@ module.exports = {
                 test: /\.(png|jpg|gif|svg)$/,
                 loader: 'file-loader',
                 options: {
-                    name: '[name].[ext]?[hash]'
+                    name: '[name].[ext]?[hash]',
+                    esModule: false
                 }
             },
             {

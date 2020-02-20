@@ -36,7 +36,7 @@
                             stroke-linecap="round" stroke-linejoin="round"/>
                         <image width="339.5" height="599.5" x="10.25" y="853.63"
                             stroke-width="0" clip-path="url(#clip-rounded-corners-screen)"
-                            :xlink:href="require('../../img/sdd-screenshot.png').default"/>
+                            xlink:href="../../img/sdd-screenshot.png"/>
                         <rect width="85.71" height="21.42" x="137.14" y="1466.001" fill="#3a3a3a"
                             rx="8.571" ry="7.857" filter="url(#b)"/>
                         <g transform="translate(1.42857143)">

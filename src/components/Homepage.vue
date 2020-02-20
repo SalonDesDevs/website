@@ -35,7 +35,7 @@ div#homepage {
 }
 
 div.placeholder-twitter {
-    height: 800px;
+    height: 100px;
     background-color: #fafafa;
 }
 </style>

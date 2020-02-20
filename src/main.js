@@ -9,8 +9,6 @@ Vue.use(Vuex);
 
 import App from './App.vue';
 import Homepage from './components/Homepage.vue';
-import Articles from './components/Articles.vue';
-import Article from './components/Article.vue';
 
 const routes = [
     {
@@ -19,11 +17,11 @@ const routes = [
     },
     {
         path: '/articles',
-        component: Articles
+        component: () => import('./components/Articles.vue')
     },
     {
         path: '/article/:id/:title',
-        component: Article
+        component: () => import('./components/Article.vue')
     },
     {
         path: '*',
