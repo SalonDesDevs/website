@@ -6,12 +6,12 @@
             <div class="title-container">
                 <div class="title">
                     <h1>{{ article.title }}</h1>
-                    <h2>{{ article.author + ' - ' + date}}</h2>
+                    <h2>{{ article.authors[0] + ' - ' + date}}</h2>
                 </div>
             </div>
-            <div class="logo-container">
+            <!--<div class="logo-container">
                 <img ref="logo" :src="logoSrc" alt="python" crossOrigin="anonymous">
-            </div>
+            </div>-->
         </div>
         <separator></separator>
     </section>
@@ -32,13 +32,13 @@ export default {
         Separator
     },
     mounted() {
-        this.$refs.logo.addEventListener('load', () => {
-            const vibrant = new Vibrant(this.$refs.logo.getAttribute('src'));
-            vibrant.getPalette((err, palette) => {
-                if(err) return console.log(err);
-                this.gradientColor = palette.Vibrant.getHex();
-            });
-        });
+        //this.$refs.logo.addEventListener('load', () => {
+        //    const vibrant = new Vibrant(this.$refs.logo.getAttribute('src'));
+        //    vibrant.getPalette((err, palette) => {
+        //        if(err) return console.log(err);
+        //        this.gradientColor = palette.Vibrant.getHex();
+        //    });
+        //});
     },
     data() {
         return {
@@ -47,16 +47,14 @@ export default {
         };
     },
     computed: {
-        logoSrc: function() {
-            return 'https://salondesdevs.io/api/icon/by-language/' + (this.article.tags[0] || 'devicon');
-        },
         gradient: function() {
             return {
                 background: 'radial-gradient(100% 400px at bottom, ' + this.gradientColor + ' -200%, transparent 95%)',
             };
         },
         date: function() {
-            return new Date(this.article.date).toISOString().substr(0, 10);
+            console.log(this.article);
+            return this.article.updateDate.toISOString().substr(0, 10);
         }
     }
 };

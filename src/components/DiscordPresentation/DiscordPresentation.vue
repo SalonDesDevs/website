@@ -57,21 +57,21 @@
                                 <template v-if="sysadmin.length > 0">
                                     <h1>sysadmin - {{ sysadmin.length }}</h1>
                                     <div class="user-container" v-for="user in sysadmin">
-                                        <img :src="user.avatar_url" />
+                                        <img loading="lazy" :src="user.avatar_url" />
                                         <span class="sysadmin">{{ user.nick || user.username }}</span>
                                     </div>
                                 </template>
                                 <template v-if="graphiste.length > 0">
                                     <h1>graphiste - {{ graphiste.length }}</h1>
                                     <div class="user-container" v-for="user in graphiste">
-                                        <img :src="user.avatar_url" />
+                                        <img loading="lazy" :src="user.avatar_url" />
                                         <span class="graphiste">{{ user.nick || user.username }}</span>
                                     </div>
                                 </template>
                                 <template v-if="dev.length > 0">
                                     <h1>développeur - {{ dev.length }}</h1>
                                     <div class="user-container" v-for="user in dev">
-                                        <img :src="user.avatar_url" />
+                                        <img loading="lazy" :src="user.avatar_url" />
                                         <span :class="{dev: true, admin: user.isAdmin}">{{ user.nick || user.username }}</span>
                                     </div>
                                 </template>

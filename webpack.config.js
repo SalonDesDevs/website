@@ -5,16 +5,14 @@ module.exports = {
     mode: process.env.NODE_ENV === 'production'
         ? 'production'
         : 'development',
-    entry: ['whatwg-fetch', 'particles.js', './src/main.js'],
+    entry: {
+        main: ['whatwg-fetch', 'particles.js', './src/main.js'],
+        articles: './articles/index.js'
+    },
     output: {
         path: path.resolve(__dirname, './dist'),
-        publicPath: '/dist/',
-        filename: 'build.js'
-    },
-    optimization: {
-        splitChunks: {
-            chunks: 'all'
-        }
+        publicPath: '/',
+        filename: '[name].js'
     },
     module: {
         rules: [
@@ -41,6 +39,10 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['vue-style-loader', 'css-loader']
+            },
+            {
+                test: /\.md$/,
+                use: ['html-loader', 'markdown-loader']
             }
         ]
     },
@@ -56,7 +58,11 @@ module.exports = {
         hints: false
     },
     plugins: [
-        new (require("vue-loader/lib/plugin"))
+        new (require("vue-loader/lib/plugin")),
+        new (require("html-webpack-plugin"))({
+            template: 'public/index.html',
+            chunks: ['main']
+        })
     ],
     devtool: '#eval-source-map'
 };

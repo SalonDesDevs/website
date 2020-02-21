@@ -1,7 +1,7 @@
 <template>
     <section class="content">
         <!-- <h1 id="heading">{{article.title}}</h1> -->
-        <div v-html="article.content" id="content">
+        <div v-html="content" id="content">
         </div>
     </section>
 </template>
@@ -12,8 +12,14 @@ export default {
     props: ['articleId'],
     data() {
         return {
-            article: this.$store.state.postContent[this.articleId]
+            article: this.$store.state.postContent[this.articleId],
+            content: null
         };
+    },
+    mounted() {
+        this.article.fetchContent().then((content) => {
+            this.content = content.default;
+        });
     }
 };
 </script>

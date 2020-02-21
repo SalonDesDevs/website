@@ -8,7 +8,6 @@ Site web du SDD
 
 <p align="center">
   Fabriqué avec <br>
-  <img src="https://cdn.rawgit.com/hexojs/logo/master/hexo-logo-avatar.png" width="25%"/>
   <img src="https://cdn.rawgit.com/vuejs/art/master/logo.png" width="25%"/>
 </p>
 

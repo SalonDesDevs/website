@@ -1,7 +1,7 @@
 <template>
     <div id="articles">
-        <article-header v-if="!loading" :article-id="id"></article-header>
-        <article-content v-if="!loading" :article-id="id"></article-content>
+        <article-header v-if="!loading" :article-id="uri"></article-header>
+        <article-content v-if="!loading" :article-id="uri"></article-content>
         <author-section></author-section>
         <footer-section></footer-section>
         <transition name="fadeload">
@@ -28,17 +28,17 @@ export default {
     },
     data() {
         return {
-            id: this.$route.params.id,
-            title: this.$route.params.title
+            uri: this.$route.params.uri,
         };
     },
     mounted() {
-        if(!this.$store.getters.hasContentBeenFetched(this.id))
+        if(!this.$store.getters.hasContentBeenFetched(this.uri))
             this.$store.dispatch('fetchArticle', this);
     },
     computed: {
         loading: function() {
-            return !this.$store.getters.hasContentBeenFetched(this.id);
+            console.log('loading?');
+            return !this.$store.getters.hasContentBeenFetched(this.uri);
         }
     },
     head: {
